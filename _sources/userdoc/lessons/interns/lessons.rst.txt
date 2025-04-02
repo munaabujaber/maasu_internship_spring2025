@@ -11,7 +11,6 @@ This section shall contain all of the lessons relevant for the project, grouped 
    
    amina-cehaja/lessons
    asja-resic/lessons
-   dino-javor/lessons
    dzenana-selimovic/lessons
    ibro-rebronja/lessons
    lamija-colakovic/lessons

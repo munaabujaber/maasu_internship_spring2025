@@ -11,7 +11,6 @@ This section shall contain all of the software requirements relevant for the pro
    
    amina-cehaja/requirements
    asja-resic/requirements
-   dino-javor/requirements
    dzenana-selimovic/requirements
    ibro-rebronja/requirements
    lamija-colakovic/requirements
