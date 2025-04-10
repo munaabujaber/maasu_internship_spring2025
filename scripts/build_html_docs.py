@@ -51,9 +51,10 @@ def build_html_docs():
 
 if __name__ == "__main__":
     # Change cwd to the 'docs' directory
-    docs_path = Path("docs").resolve()
+    docs_path = Path('docs').resolve()
     os.chdir(docs_path)
 
     apidoc_path = Path("source") / "apidoc"
     build_apidoc(apidoc_path)
     build_html_docs()
+ 
