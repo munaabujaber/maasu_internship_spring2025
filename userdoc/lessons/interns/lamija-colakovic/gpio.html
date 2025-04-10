@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Initial requirement &mdash; Maasu Internship 4 1 documentation</title>
+  <title>GPIO &mdash; Maasu Internship 4 1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
@@ -60,8 +60,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction/introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/fundamentals.html">2. Fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../environment_setup/environment_setup.html">3. Development Environment Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../lessons/lessons.html">4. Lessons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lessons.html">4. Lessons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements/requirements.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../faqs/faqs.html">6. Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/resources.html">8. Resources</a></li>
@@ -81,9 +81,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Initial requirement</li>
+      <li class="breadcrumb-item active">GPIO</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../_sources/userdoc/requirements/interns/lamija-colakovic/initial.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/userdoc/lessons/interns/lamija-colakovic/gpio.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -91,32 +91,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="initial-requirement">
-<h1>Initial requirement<a class="headerlink" href="#initial-requirement" title="Link to this heading"></a></h1>
-<div class="need_container docutils container" id="SNCB-da66d779">
-<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1743942977">
-<tbody>
-<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
-<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">label</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1743942977" title="REQ_INT3_1743942977">REQ_INT3_1743942977</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
-</div>
-</td>
-</tr>
-<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
-<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
-<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
-<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
-<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
-<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Lamija Colakovic</span></span></div>
-</span></span></div>
-<div class="line"><span></span></div>
-</div>
-</td>
-</tr>
-<tr class="need content row-odd"><td class="need content" colspan="1"><p>description</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+  <section id="gpio">
+<h1>GPIO<a class="headerlink" href="#gpio" title="Link to this heading"></a></h1>
+<p>GPIO(General Purpose Input/Output) represents the interface between externals and devices and microcontroller. Each GPIO pin can receive data as an input or
+send data as an output. They include key registers:</p>
+<p>1. MODER (Mode Register):
+Mod Register defines the four functional modes: input, output, analog and alternate function.
+Input mode configures the pin to receive external signals.</p>
+<p>Output mode configures the pin to send data or signals to external devices.</p>
+<p>Analog mode sets the pin for analog functions, typically used when the pin is connected to an Analog-to-Digital Converter (ADC)
+or Digital-to-Analog Converter (DAC).</p>
+<p>Alternate Ffnction mode enables the pin to work with other peripherals like USART, SPI, I2C, timers, and PWM.</p>
+<p>2. PUPDR (Pull-Up/Pull-Down Register):
+Controls the input state of the pin. Each pin has a pair of bits in the PUPDR register, such as: No pull-up or pull-down,
+pull-up and pull down.</p>
+<ol class="arabic simple" start="3">
+<li><p>OTYPER (Output Type Register):</p></li>
+</ol>
+<p>Specifies whether an output pin is configured as push-pull or open-drain.
+Push-Pull: The pin can actively drive high and low signals.
+Open-Drain: The pin can only drive low.</p>
+<p>OSPEEDR (Output Speed Register): - Sets the output speed for each pin.</p>
+<p>AFR (Alternate Function Register): - Configures the pin to work with an alternate function, such as a peripheral interface (e.g., USART, SPI, or PWM).</p>
+<p>IDR (Input Data Register): - Used to read the current logical level (high or low) of each input pin.</p>
+<p>ODR (Output Data Register): - Used to set the logical level of each output pin directly.</p>
+<p>BSRR (Bit Set/Reset Register): - A specialized register that allows setting or clearing individual pins without affecting the other bits in the ODR register.</p>
+<p>Practical uses of GPIO:</p>
+<p>Digital Control: - Control devices like LEDs, relays, and small motors.</p>
+<p>Signal Monitoring: - Used in applications that require monitoring high/low states from external devices (e.g., checking if a door is open or closed).</p>
+<p>Communication: -Alternate function configurations enable dedicated communication lines, with each GPIO pin mapped to specific peripheral functions.</p>
+<p>PWM (Pulse Width Modulation): - PWM signals adjust duty cycles to control the power delivered to connected devices.</p>
+<p>Interrupt Handling: - Interrupts allow the microcontroller to respond immediately to events, which is essential for responsive systems.</p>
 </section>
 
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Initial requirement &mdash; Maasu Internship 4 1 documentation</title>
+  <title>Clock Initialization &mdash; Maasu Internship 4 1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
@@ -60,8 +60,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction/introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/fundamentals.html">2. Fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../environment_setup/environment_setup.html">3. Development Environment Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../lessons/lessons.html">4. Lessons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lessons.html">4. Lessons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements/requirements.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../faqs/faqs.html">6. Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/resources.html">8. Resources</a></li>
@@ -81,9 +81,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Initial requirement</li>
+      <li class="breadcrumb-item active">Clock Initialization</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../_sources/userdoc/requirements/interns/lamija-colakovic/initial.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/userdoc/lessons/interns/lamija-colakovic/clock_init.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -91,32 +91,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="initial-requirement">
-<h1>Initial requirement<a class="headerlink" href="#initial-requirement" title="Link to this heading"></a></h1>
-<div class="need_container docutils container" id="SNCB-da66d779">
-<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1743942977">
-<tbody>
-<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
-<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">label</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1743942977" title="REQ_INT3_1743942977">REQ_INT3_1743942977</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
-</div>
-</td>
-</tr>
-<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
-<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
-<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
-<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
-<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
-<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Lamija Colakovic</span></span></div>
-</span></span></div>
-<div class="line"><span></span></div>
-</div>
-</td>
-</tr>
-<tr class="need content row-odd"><td class="need content" colspan="1"><p>description</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+  <section id="clock-initialization">
+<h1>Clock Initialization<a class="headerlink" href="#clock-initialization" title="Link to this heading"></a></h1>
+<p>Clock initialization is a critical step in setting up an STM32 microcontroller to ensure accurate and efficient operation.</p>
+<p>RCC (Reset and Clock Control):</p>
+<p>Manages reset and clock control, configuring system clocks and overseeing the reset circuitry within the STM32 microcontroller.</p>
+<p>Registers:</p>
+<p>CR (Control Register): Contains bits that control the clock sources and oscillators.</p>
+<p>APB1ENR (APB1 Peripheral Clock Enable Register): Enables or disables clocks for peripherals connected to the APB1 bus.</p>
+<p>Clock Sources:</p>
+<p>HSI (High-Speed Internal): Internal clock, typically running at 8 MHz.</p>
+<p>HSE (High-Speed External): External clock source, often used for higher accuracy.</p>
+<p>LSI (Low-Speed Internal): Internal clock for low-power applications.</p>
+<p>LSE (Low-Speed External): External clock, frequently used for RTC (Real-Time Clock) applications.</p>
+<p>Bits and Configurations:</p>
+<p>HSEBYP: Bit in CR allowing HSE oscillator bypass with an external clock.</p>
+<p>HSEON: Bit in CR that enables the high-speed external oscillator.</p>
+<p>HSERDY: Status bit in CR indicating whether the HSE oscillator is stable and ready.</p>
+<p>Power Control:</p>
+<p>PWREN: Bit in APB1ENR enabling the power control module’s clock.</p>
+<p>VOS (Voltage Scaling): Configured in the Power Control Register (PWR_CR) to adjust voltage levels and performance. - Bit 14 (VOS_0): Highest performance, highest voltage. - Bit 15 (VOS_1): Medium performance, medium voltage.</p>
+<p>Flash Configuration:</p>
+<p>FLASH_ACR_LATENCY: Configures flash memory wait states; higher wait states support higher clock speeds (90-100 MHz with 3WS).</p>
+<p>PLL (Phase-Locked Loop) Configuration:</p>
+<p>PLLCFGR (PLL Configuration Register): Adjusts multipliers and dividers for the PLL to achieve a desired frequency. - PLLM: Main clock (HCLK) multiplier. - PLLN: Multiplier for the PLL output. - PLLP: Divider for the main clock output; also includes PLLQ and PLLI2S for USB and I2S configurations.</p>
+<p>Example PLL Configuration</p>
+<p>To configure the PLL, the following key bits in the RCC_PLLCFGR register are used:</p>
+<blockquote>
+<div><p>RCC_PLLCFGR_PLLM: Bit mask for PLLM.</p>
+<p>RCC_PLLCFGR_PLLM_Pos: Position of the PLLM bits within the register.</p>
+</div></blockquote>
+<p>The clock calculation formula is:</p>
+<blockquote>
+<div><p>VCO clock = PLL input clock × (PLLN / PLLM)</p>
+<p>PLL general clock output = VCO clock / PLLP</p>
+</div></blockquote>
+<p>2.2.4.4. Importance of Clock Initialization</p>
+<p>Clock initialization serves several essential purposes:</p>
+<blockquote>
+<div><p>Accuracy: Ensures precise frequency, which is vital for timing-sensitive tasks.</p>
+<p>Performance: Allows the microcontroller to achieve optimal performance by properly configuring clock sources and the PLL.</p>
+<p>Power Efficiency: Effective clock configuration can reduce power usage, especially in low-power modes.</p>
+</div></blockquote>
 </section>
 
 
