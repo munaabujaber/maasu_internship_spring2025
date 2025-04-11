@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.1.5. Lessons by Lamija Colakovic &mdash; Maasu Internship 4 1 documentation</title>
+  <title>4.1.4.1. Lesson 1 - CLOCK &mdash; Maasu Internship 4 1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
@@ -32,8 +32,8 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.1.6. Lessons by Lamija Imamovic" href="../lamija-imamovic/lessons.html" />
-    <link rel="prev" title="4.1.4.3. Lesson 3 - USART" href="../ibro-rebronja/USART.html" />
+    <link rel="next" title="4.1.4.2. Lesson 2 - GPIO" href="GPIO.html" />
+    <link rel="prev" title="4.1.4. Lessons by Ibro Rebronja" href="lessons.html" />
 <link href="../../../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -67,8 +67,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../amina-cehaja/lessons.html">4.1.1. Lessons by Amina Cehaja</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../asja-resic/lessons.html">4.1.2. Lessons by Asja Resic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dzenana-selimovic/lessons.html">4.1.3. Lessons by Dzenana Selimovic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ibro-rebronja/lessons.html">4.1.4. Lessons by Ibro Rebronja</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.5. Lessons by Lamija Colakovic</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="lessons.html">4.1.4. Lessons by Ibro Rebronja</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.1.4.1. Lesson 1 - CLOCK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">4.1.4.2. Lesson 2 - GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USART.html">4.1.4.3. Lesson 3 - USART</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lamija-colakovic/lessons.html">4.1.5. Lessons by Lamija Colakovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../lamija-imamovic/lessons.html">4.1.6. Lessons by Lamija Imamovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mirza-bajramovic/lessons.html">4.1.7. Lessons by Mirza Bajramovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../muhamed-sjekirica/lessons.html">4.1.8. Lessons by Muhamed Sjekirica</a></li>
@@ -99,9 +104,10 @@
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../lessons.html"><span class="section-number">4. </span>Lessons</a></li>
           <li class="breadcrumb-item"><a href="../lessons.html"><span class="section-number">4.1. </span>Lessons written by each intern</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4.1.5. </span>Lessons by Lamija Colakovic</li>
+          <li class="breadcrumb-item"><a href="lessons.html"><span class="section-number">4.1.4. </span>Lessons by Ibro Rebronja</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1.4.1. </span>Lesson 1 - CLOCK</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../_sources/userdoc/lessons/interns/lamija-colakovic/lessons.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/userdoc/lessons/interns/ibro-rebronja/clock_init.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -109,16 +115,68 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lessons-by-lamija-colakovic">
-<h1><span class="section-number">4.1.5. </span>Lessons by Lamija Colakovic<a class="headerlink" href="#lessons-by-lamija-colakovic" title="Link to this heading"></a></h1>
+  <section id="lesson-1-clock">
+<h1><span class="section-number">4.1.4.1. </span>Lesson 1 - CLOCK<a class="headerlink" href="#lesson-1-clock" title="Link to this heading"></a></h1>
+<section id="key-takeaways">
+<h2><span class="section-number">4.1.4.1.1. </span>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading"></a></h2>
+<p>If I would work with a microcontroller, I noticed that getting the clock right is super important—it’s like the heartbeat of the system. If the clock isn’t set up properly, nothing will work the way it’s supposed to.</p>
+<p>The clock controls the speed of everything inside the chip and also how much power it uses.</p>
+<p>The <strong>RCC (Reset and Clock Control)</strong> module is what I use to manage the clock settings.</p>
+<p>This is where I would choose the clock source, turn peripheral clocks on or off, and tweak the system’s frequency using the PLL (Phase-Locked Loop).</p>
+</section>
+<section id="internal-vs-external-clocks">
+<h2><span class="section-number">4.1.4.1.2. </span>Internal vs. External Clocks<a class="headerlink" href="#internal-vs-external-clocks" title="Link to this heading"></a></h2>
+<p>There are a few different clock options I can use, which are:</p>
+<ul class="simple">
+<li><p>The <strong>HSI</strong> (High-Speed Internal) clock is the default one built into the microcontroller, running at 8 MHz.</p></li>
+<li><p>If I want something more precise, I can use an <strong>HSE</strong> (High-Speed External) crystal oscillator.</p></li>
+<li><p>There are also <strong>LSI</strong> and <strong>LSE</strong> clocks, which are slower and perfect for low-power tasks like running a real-time clock (RTC).</p></li>
+</ul>
+</section>
+<section id="key-registers">
+<h2><span class="section-number">4.1.4.1.3. </span>Key Registers<a class="headerlink" href="#key-registers" title="Link to this heading"></a></h2>
+<p>I would probably use a few registers to control the clocks.</p>
+<p>The <strong>CR</strong> (Control Register) is where I would enable the clock sources and check if they’re stable.</p>
+<p><strong>APB1ENR</strong> is used to turn on the clocks for peripherals like communication modules, which I would need to talk to other devices.</p>
+<p>The <strong>PWR_CR</strong> register controls how much power the system uses, which affects performance.</p>
+<p>I could adjust the voltage and power settings there.</p>
+<p>Then, <strong>FLASH_ACR_LATENCY</strong> is where I would set how long the microcontroller has to wait for the flash memory when running at higher speeds.</p>
+<p>Finally, <strong>PLLCFGR</strong> is the register I would use to set up the PLL to adjust the system’s clock speed.</p>
+</section>
+<section id="the-pll-setup">
+<h2><span class="section-number">4.1.4.1.4. </span>The PLL Setup<a class="headerlink" href="#the-pll-setup" title="Link to this heading"></a></h2>
+<p>– Setting up the <strong>PLL</strong> (Phase-Locked Loop) would probably be confusing at first but theoretically:</p>
+<p>The PLL is used to boost the clock speed.</p>
+<p>I could start with a low frequency, like 8 MHz, and then use the PLL to multiply it up to something higher, like 100 MHz.</p>
+<p>To do this, I would probably divide the input frequency (PLLM), multiply it (PLLN), and then divide it again to get the system’s final clock speed (PLLP).</p>
+</section>
+<section id="most-important-insights">
+<h2><span class="section-number">4.1.4.1.5. </span>Most Important Insights<a class="headerlink" href="#most-important-insights" title="Link to this heading"></a></h2>
+<p>To get the best performance, I probably would need to make sure both the clock and flash memory wait states are set correctly.</p>
+<p>If I want to save power, I should only turn on the clocks I really need.</p>
+<p>If stability is important, like for USB or real-time tasks, I should probably go with external clocks like <strong>HSE</strong>.</p>
+<p>I would have to be careful with the register bits (like <strong>HSEBYP</strong> or <strong>VOS_0</strong>) to make sure I don’t mess things up.</p>
+<p>And, clock initialization is always the first thing I would probably do before setting up anything else.</p>
+</section>
+<section id="revision-points">
+<h2><span class="section-number">4.1.4.1.6. </span>Revision Points<a class="headerlink" href="#revision-points" title="Link to this heading"></a></h2>
+<p>The <strong>RCC</strong> controls both the clock and reset functions. For clock sources, there’s <strong>HSI</strong> (internal), <strong>HSE</strong> (external), <strong>LSI</strong>, and <strong>LSE</strong>.</p>
+<p>The <strong>CR Register</strong> turns clocks on and checks if they’re stable.</p>
+<p><strong>APB1ENR</strong> powers the peripherals, and <strong>VOS</strong> in <strong>PWR_CR</strong> manages the power and performance settings.</p>
+<p><strong>FLASH_ACR_LATENCY</strong> adjusts the wait states for the flash memory at higher speeds.</p>
+<p>The <strong>PLLCFGR</strong> configures the PLL settings (PLLM, PLLN, PLLP).</p>
+<p>The PLL formula is: VCO = (Input × PLLN / PLLM), and the system clock = VCO / PLLP.</p>
+<p>So, if I start with an external 8 MHz clock, I can use the PLL to reach a 100 MHz system clock.</p>
+<p>To save power, I should only enable the clocks I need. And I should always remember—setting up the clock is the first step before anything else.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../ibro-rebronja/USART.html" class="btn btn-neutral float-left" title="4.1.4.3. Lesson 3 - USART" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../lamija-imamovic/lessons.html" class="btn btn-neutral float-right" title="4.1.6. Lessons by Lamija Imamovic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lessons.html" class="btn btn-neutral float-left" title="4.1.4. Lessons by Ibro Rebronja" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="GPIO.html" class="btn btn-neutral float-right" title="4.1.4.2. Lesson 2 - GPIO" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

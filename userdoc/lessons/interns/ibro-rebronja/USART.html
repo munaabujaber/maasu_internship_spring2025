@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.1.5. Lessons by Lamija Colakovic &mdash; Maasu Internship 4 1 documentation</title>
+  <title>4.1.4.3. Lesson 3 - USART &mdash; Maasu Internship 4 1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
@@ -32,8 +32,8 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.1.6. Lessons by Lamija Imamovic" href="../lamija-imamovic/lessons.html" />
-    <link rel="prev" title="4.1.4.3. Lesson 3 - USART" href="../ibro-rebronja/USART.html" />
+    <link rel="next" title="4.1.5. Lessons by Lamija Colakovic" href="../lamija-colakovic/lessons.html" />
+    <link rel="prev" title="4.1.4.2. Lesson 2 - GPIO" href="GPIO.html" />
 <link href="../../../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -67,8 +67,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../amina-cehaja/lessons.html">4.1.1. Lessons by Amina Cehaja</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../asja-resic/lessons.html">4.1.2. Lessons by Asja Resic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dzenana-selimovic/lessons.html">4.1.3. Lessons by Dzenana Selimovic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ibro-rebronja/lessons.html">4.1.4. Lessons by Ibro Rebronja</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.5. Lessons by Lamija Colakovic</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="lessons.html">4.1.4. Lessons by Ibro Rebronja</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="clock_init.html">4.1.4.1. Lesson 1 - CLOCK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">4.1.4.2. Lesson 2 - GPIO</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.1.4.3. Lesson 3 - USART</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../lamija-colakovic/lessons.html">4.1.5. Lessons by Lamija Colakovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../lamija-imamovic/lessons.html">4.1.6. Lessons by Lamija Imamovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mirza-bajramovic/lessons.html">4.1.7. Lessons by Mirza Bajramovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../muhamed-sjekirica/lessons.html">4.1.8. Lessons by Muhamed Sjekirica</a></li>
@@ -99,9 +104,10 @@
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../lessons.html"><span class="section-number">4. </span>Lessons</a></li>
           <li class="breadcrumb-item"><a href="../lessons.html"><span class="section-number">4.1. </span>Lessons written by each intern</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4.1.5. </span>Lessons by Lamija Colakovic</li>
+          <li class="breadcrumb-item"><a href="lessons.html"><span class="section-number">4.1.4. </span>Lessons by Ibro Rebronja</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1.4.3. </span>Lesson 3 - USART</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../_sources/userdoc/lessons/interns/lamija-colakovic/lessons.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/userdoc/lessons/interns/ibro-rebronja/USART.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -109,16 +115,63 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lessons-by-lamija-colakovic">
-<h1><span class="section-number">4.1.5. </span>Lessons by Lamija Colakovic<a class="headerlink" href="#lessons-by-lamija-colakovic" title="Link to this heading"></a></h1>
+  <section id="lesson-3-usart">
+<h1><span class="section-number">4.1.4.3. </span>Lesson 3 - USART<a class="headerlink" href="#lesson-3-usart" title="Link to this heading"></a></h1>
+<section id="overview-of-usart-on-stm32">
+<h2><span class="section-number">4.1.4.3.1. </span>Overview of USART on STM32<a class="headerlink" href="#overview-of-usart-on-stm32" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>This week, I dove into <strong>USART</strong> (Universal Synchronous/Asynchronous Receiver/Transmitter) on the <strong>STM32F411 microcontroller</strong>.</p></li>
+</ul>
+<p>The thing about USART is that, unlike UART, it supports both synchronous and asynchronous communication.</p>
+<p>For most of the time, I would be using it in asynchronous mode because it’s more flexible.
+In this mode, data is sent bit by bit, with start and stop bits marking the beginning and end of the data, and you don’t need a clock line—making everything simpler.</p>
+</section>
+<section id="key-takeaways">
+<h2><span class="section-number">4.1.4.3.2. </span>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>In asynchronous mode, you don’t need a clock line to send data, which makes it a great option for serial communication.</p></li>
+</ul>
+<p>– To get USART working, I need to enable the clock first using the RCC register.</p>
+<p>Then, I configure the right GPIO pins for transmitting (TX) and receiving (RX) data, like PA9 for TX and PA10 for RX.
+The baud rate (how fast the data is sent) is set in the BRR register.</p>
+<p>The USART itself is turned on and configured through the CR1 register by enabling the <strong>UE</strong> bit (USART Enable), and the <strong>TE</strong> (Transmitter Enable) and <strong>RE</strong> (Receiver Enable) bits for sending and receiving data.</p>
+</section>
+<section id="usart-configuration-steps">
+<h2><span class="section-number">4.1.4.3.3. </span>USART Configuration Steps<a class="headerlink" href="#usart-configuration-steps" title="Link to this heading"></a></h2>
+<p>– To get USART up and running on STM32, the first thing is to enable the clock through the RCC register.</p>
+<p>Then, I pick the right pins for TX and RX, like PA2 for TX and PA4 for RX, and set them to alternate function mode (AF7).</p>
+<p>After that, I calculate the baud rate based on the system clock and put it in the BRR register.</p>
+<p>The final step is to enable the USART and configure the transmitter and receiver by setting the right bits in the CR1 register.</p>
+</section>
+<section id="sending-data-with-usart">
+<h2><span class="section-number">4.1.4.3.4. </span>Sending Data with USART<a class="headerlink" href="#sending-data-with-usart" title="Link to this heading"></a></h2>
+<p>– When I want to send data over USART, I first check if the <strong>TXE</strong> flag is set, which means the transmit buffer is ready.</p>
+<p>Once it’s ready, I can write my byte to the <strong>DR</strong> register.</p>
+<p>If I’m sending a whole string or a buffer, I’ll loop through each byte, checking the <strong>TXE</strong> flag to make sure it’s ready before sending the next byte.</p>
+</section>
+<section id="example-using-usart2">
+<h2><span class="section-number">4.1.4.3.5. </span>Example: Using USART2<a class="headerlink" href="#example-using-usart2" title="Link to this heading"></a></h2>
+<p>– If I want to use <strong>USART2</strong>, I’ll start by configuring the pins PA2 (TX) and PA4 (RX) in alternate function mode (AF7).</p>
+<p>Then, I set the baud rate to 115200 and turn on 16x oversampling to make things more accurate.</p>
+<p>Next, I enable both TX and RX in the CR1 register.</p>
+<p>In my main program, I can then send data by writing to the USART data register.</p>
+</section>
+<section id="important-registers">
+<h2><span class="section-number">4.1.4.3.6. </span>Important Registers<a class="headerlink" href="#important-registers" title="Link to this heading"></a></h2>
+<p>The <strong>RCC</strong> register is the one that enables the clock for USART.</p>
+<p>The <strong>CR1</strong> register is where all the configuration happens for USART—like turning it on with the <strong>UE</strong> bit, and enabling the transmitter with <strong>TE</strong> and the receiver with <strong>RE</strong>.</p>
+<p>The <strong>BRR</strong> register is where I set the baud rate.</p>
+<p>The <strong>DR</strong> register holds the data I want to send.</p>
+<p>The <strong>SR</strong> register lets me know what’s happening, and the <strong>TXE</strong> flag tells me when the transmit buffer is ready to send more data.</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../ibro-rebronja/USART.html" class="btn btn-neutral float-left" title="4.1.4.3. Lesson 3 - USART" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../lamija-imamovic/lessons.html" class="btn btn-neutral float-right" title="4.1.6. Lessons by Lamija Imamovic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GPIO.html" class="btn btn-neutral float-left" title="4.1.4.2. Lesson 2 - GPIO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../lamija-colakovic/lessons.html" class="btn btn-neutral float-right" title="4.1.5. Lessons by Lamija Colakovic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
