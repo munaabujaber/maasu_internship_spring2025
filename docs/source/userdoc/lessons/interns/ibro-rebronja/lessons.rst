@@ -3,9 +3,9 @@ Lessons by Ibro Rebronja
 =================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Lessons:
 
-    clock_init
-    usart
-    gpio
+   clock_init
+   USART
+   GPIO
