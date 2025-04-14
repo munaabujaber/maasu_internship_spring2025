@@ -1,39 +1,36 @@
-====================================
-
+====================
 Clock initialization
-
-====================================
+====================
 
 Clock initialization is a critical step in setting up an STM32 microcontroller to ensure accurate and efficient operation.
 Key terms:
 
 -RCC(Reset and Clock Control)-RCC manages reset and clock control,configuring system clocks and overseeing the reset circutry within the microcontroller.
 -Registers:
-        CR (Control Register): Contains bits that control the clock sources and oscillators.
-        APB1ENR (APB1 Peripheral Clock Enable Register): Enables or disables clocks for peripherals connected to the APB1 bus.
+CR (Control Register): Contains bits that control the clock sources and oscillators.
+APB1ENR (APB1 Peripheral Clock Enable Register): Enables or disables clocks for peripherals connected to the APB1 bus.
 -Clock Sources:
-        HSI (High-Speed Internal): Internal clock, typically running at 8 MHz.
-        HSE (High-Speed External): External clock source, often used for higher accuracy.
-        LSI (Low-Speed Internal): Internal clock for low-power applications.
-        LSE (Low-Speed External): External clock, frequently used for RTC (Real-Time Clock) applications.
+HSI (High-Speed Internal): Internal clock, typically running at 8 MHz.
+HSE (High-Speed External): External clock source, often used for higher accuracy.
+LSI (Low-Speed Internal): Internal clock for low-power applications.
+LSE (Low-Speed External): External clock, frequently used for RTC (Real-Time Clock) applications.
 -Bits and Configurations:
-        HSEBYP: Bit in CR allowing HSE oscillator bypass with an external clock.
-        HSEON: Bit in CR that enables the high-speed external oscillator.
-        HSERDY: Status bit in CR indicating whether the HSE oscillator is stable and ready.
+HSEBYP: Bit in CR allowing HSE oscillator bypass with an external clock.
+HSEON: Bit in CR that enables the high-speed external oscillator.
+HSERDY: Status bit in CR indicating whether the HSE oscillator is stable and ready.
 -Power Control:
-        PWREN: Bit in APB1ENR enabling the power control module’s clock.
-        VOS (Voltage Scaling): Configured in the Power Control Register (PWR_CR) to adjust voltage levels and performance. 
+PWREN: Bit in APB1ENR enabling the power control module’s clock.
+VOS (Voltage Scaling): Configured in the Power Control Register (PWR_CR) to adjust voltage levels and performance. 
 -Flash Configuration:
-        FLASH_ACR_LATENCY: Configures flash memory wait states; higher wait states support higher clock speeds (90-100 MHz with 3WS).
+FLASH_ACR_LATENCY: Configures flash memory wait states; higher wait states support higher clock speeds (90-100 MHz with 3WS).
 -PLL (Phase-Locked Loop) Configuration:
-
-        PLLCFGR (PLL Configuration Register): Adjusts multipliers and dividers for the PLL to achieve a desired frequency. - PLLM: Main clock (HCLK) multiplier. - PLLN: Multiplier for the PLL output. - PLLP: Divider for the main clock output; also includes PLLQ and PLLI2S for USB and I2S configurations.
+PLLCFGR (PLL Configuration Register): Adjusts multipliers and dividers for the PLL to achieve a desired frequency. - PLLM: Main clock (HCLK) multiplier. - PLLN: Multiplier for the PLL output. - PLLP: Divider for the main clock output; also includes PLLQ and PLLI2S for USB and I2S configurations.
 
 
 Clock initialization serves several essential purposes:
-    Accuracy: Ensures precise frequency, which is vital for timing-sensitive tasks.
-    Performance: Allows the microcontroller to achieve optimal performance by properly configuring clock sources and the PLL.
-    Power Efficiency: Effective clock configuration can reduce power usage, especially in low-power modes.
+Accuracy: Ensures precise frequency, which is vital for timing-sensitive tasks.
+Performance: Allows the microcontroller to achieve optimal performance by properly configuring clock sources and the PLL.
+Power Efficiency: Effective clock configuration can reduce power usage, especially in low-power modes.
 
 Proper clock initialization establishes a reliable foundation for effective microcontroller operation.
 
@@ -49,14 +46,14 @@ The backup domain reset sets all RTC registers and the RCC_BDCR register to thei
 values.
 
 Three different clock sources can be used to drive the system clock (SYSCLK):
-  HSI oscillator clock
-  HSE oscillator clock
-  Main PLL (PLL) clock
+HSI oscillator clock
+HSE oscillator clock
+Main PLL (PLL) clock
 The devices have the two following secondary clock sources:
-  -32 kHz low-speed internal RC (LSI RC) which drives the independent watchdog and,
-   optionally, the RTC used for Auto-wakeup from the Stop/Standby mode.
-  -32.768 kHz low-speed external crystal (LSE crystal) which optionally drives the RTC
-   clock (RTCCLK)
+-32 kHz low-speed internal RC (LSI RC) which drives the independent watchdog and,
+optionally, the RTC used for Auto-wakeup from the Stop/Standby mode.
+-32.768 kHz low-speed external crystal (LSE crystal) which optionally drives the RTC
+clock (RTCCLK)
 Each clock source can be switched on or off independently when it is not used, to optimize
 power consumption.
 
@@ -91,8 +88,8 @@ temporization, the clock is provided to the IWDG.
 
 Clock-Out capability
 Two microcontroller clock output(MCO) pins are available:
-    MCO1-You can output four different clock sources onto the MCO1 pin (PA8) using the
-    configurable prescaler:HSI,LSE,HSE,PLL
-    MCO2-You can output four different clock sources onto the MCO2 pin (PC9) using the
-    configurable prescaler:HSE,PLL,SYSCLK,PLLI2S clock
+MCO1-You can output four different clock sources onto the MCO1 pin (PA8) using the
+configurable prescaler:HSI,LSE,HSE,PLL
+MCO2-You can output four different clock sources onto the MCO2 pin (PC9) using the
+configurable prescaler:HSE,PLL,SYSCLK,PLLI2S clock
     
