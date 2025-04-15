@@ -1,6 +1,6 @@
-============================
-Lessons by Muhamed Sjekirica
-============================
+=========================
+Muhamed Sjekirica Lessons
+=========================
 
 .. toctree::
    :maxdepth: 2

@@ -1,8 +1,6 @@
-=================================
-
-General purpose Input/Output pins
-
-=================================
+=============
+GPIO Overview
+=============
 
 They act as the interface between the microcontroller and external devices.
 Each GPIO pin can be configured to either send data out (output mode) or receive data in (input mode), 
@@ -72,7 +70,7 @@ The most important features for GPIO in STM32F411xC/E
     -Modes: Each I/O can be configured as:
         Input: Floating, pull-up, pull-down, or analog
         Output: Push-pull or open-drain with pull-up or pull-down
-        Alternate function: Push-pull or open-drain with pull-up/down capability
+        Alternate function: Push-pull or open-drain with pull-up/down capability.
     -GPIO pins can be set or reset using the GPIOx_BSRR register for efficient control
     -The GPIOx_LCKR register locks the configuration to prevent accidental changes
     -Output speed for each pin can be selected for optimized performance

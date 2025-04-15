@@ -1,8 +1,6 @@
-==========================
-
+=====
 USART 
-
-==========================
+=====
 
 
 USART (Universal Synchronous/Asynchronous Receiver/Transmitter) is a vital hardware component in microcontrollers,
@@ -13,8 +11,8 @@ Synchronous Serial Communication: Involves both data and clock lines, where the 
 
     Sample and Sample Rate: A sample refers to a single piece of data being transmitted. The sample rate is the number of samples taken per second.
     Oversampling: Involves sampling at a higher rate than the minimum required to improve accuracy and simplify filtering. 
-        The default oversampling rate is 16.
-    Baud Rate: Determines the speed at which data bits are transmitted. Correct baud rate configuration is essential for smooth communication.
+    The default oversampling rate is 16.
+    Baud Rate: Determines the speed at which data bits are transmitted.Correct baud rate configuration is essential for smooth communication.
 
 
 DATA transmission
