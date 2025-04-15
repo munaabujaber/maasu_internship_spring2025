@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.1.7.1. GPIO &mdash; Maasu Internship 4 1 documentation</title>
+  <title>CLOCK SUMMARY &mdash; Maasu Internship 4 1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
@@ -32,8 +32,6 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.1.7.2. Clock Initialization" href="clock_init.html" />
-    <link rel="prev" title="4.1.7. Lessons by Mirza Bajramovic" href="lessons.html" />
 <link href="../../../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -58,30 +56,11 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction/introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/fundamentals.html">2. Fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../environment_setup/environment_setup.html">3. Development Environment Setup</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../lessons.html">4. Lessons</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">4.1. Lessons written by each intern</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../amina-cehaja/lessons.html">4.1.1. Lessons by Amina Cehaja</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../asja-resic/lessons.html">4.1.2. Lessons by Asja Resic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../dzenana-selimovic/lessons.html">4.1.3. Lessons by Dzenana Selimovic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ibro-rebronja/lessons.html">4.1.4. Lessons by Ibro Rebronja</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../lamija-colakovic/lessons.html">4.1.5. Lessons by Lamija Colakovic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../lamija-imamovic/lessons.html">4.1.6. Lessons by Lamija Imamovic</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="lessons.html">4.1.7. Lessons by Mirza Bajramovic</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.1.7.1. GPIO</a></li>
-<li class="toctree-l4"><a class="reference internal" href="clock_init.html">4.1.7.2. Clock Initialization</a></li>
-<li class="toctree-l4"><a class="reference internal" href="usart.html">4.1.7.3. USART</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../muhamed-sjekirica/lessons.html">4.1.8. Lessons by Muhamed Sjekirica</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../samir-dosljak/lessons.html">4.1.9. Lessons by Dino Javor</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../lessons.html">4. Lessons</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../faqs/faqs.html">5. Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary/glossary.html">6. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/resources.html">7. Resources</a></li>
@@ -101,12 +80,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../../lessons.html"><span class="section-number">4. </span>Lessons</a></li>
-          <li class="breadcrumb-item"><a href="../lessons.html"><span class="section-number">4.1. </span>Lessons written by each intern</a></li>
-          <li class="breadcrumb-item"><a href="lessons.html"><span class="section-number">4.1.7. </span>Lessons by Mirza Bajramovic</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4.1.7.1. </span>GPIO</li>
+      <li class="breadcrumb-item active">CLOCK SUMMARY</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../_sources/userdoc/lessons/interns/mirza-bajramovic/gpio.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/userdoc/lessons/interns/amina-cehaja/clock_init.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -114,25 +90,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="gpio">
-<h1><span class="section-number">4.1.7.1. </span>GPIO<a class="headerlink" href="#gpio" title="Link to this heading"></a></h1>
-<p><strong>Keywords:</strong>
-GPIO, MODER, PUPDR, OTYPER, OSPEEDR, AFR, IDR, ODR, BSRR</p>
-<p><strong>Summary</strong></p>
-<p>This lesson covered the basics of GPIO (General-Purpose Input/Output) and how it is used in STM32 microcontrollers.
-It went through the purpose of GPIO and explained how each pin can be set as input, output, analog, or alternate function.</p>
-<p>The lesson included an overview of important registers like MODER, PUPDR, OTYPER, OSPEEDR, AFR, IDR, ODR, and BSRR, explaining how each one is used to control different aspects of pin behavior.
-It also introduced the idea of GPIO pin modes and described how they work in different configurations like input with pull-up or pull-down, output with push-pull or open-drain, analog input, and alternate function for communication peripherals.</p>
-<p>Overall, it helped make sense of how GPIO works and how to start using it in simple embedded projects.</p>
+  <section id="clock-summary">
+<h1>CLOCK SUMMARY<a class="headerlink" href="#clock-summary" title="Link to this heading"></a></h1>
+<dl class="simple">
+<dt>..contents:: Table of Contents</dt><dd><dl class="field-list simple">
+<dt class="field-odd">local<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+<dt class="field-even">depth<span class="colon">:</span></dt>
+<dd class="field-even"><p>2</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The clock is crucial to ensure an accurate and efficient operation. It is like a heartbeat-determines how fast the system runs. With proper configuration, the following is achieved: accuracy (precise frequency), optimal performance, and power efficiency.</p>
+</section>
+<section id="clock-initialization">
+<h2>Clock Initialization<a class="headerlink" href="#clock-initialization" title="Link to this heading"></a></h2>
+<p>The needs are met by selecting the clock sources, voltage scaling, flash memory wait states, and adjusting the PLL parameters.</p>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p>The STM32 gives registers that let us control every detail of the clock system. Specific bits are set or cleared in these registers to choose the clock source, and frequency.
+RCC register manages reset and clock control.</p>
+</section>
+<section id="clock-source-selection">
+<h2>Clock Source Selection<a class="headerlink" href="#clock-source-selection" title="Link to this heading"></a></h2>
+<p>There are multiple options: HSI, HSE, LSI, LSE, and we choose one depending on whether we need accuracy or simplicity.</p>
+</section>
+<section id="voltage-scaling">
+<h2>Voltage Scaling<a class="headerlink" href="#voltage-scaling" title="Link to this heading"></a></h2>
+<p>Higher frequencies need higher core voltage. STM32 allows voltage scaling to save power at lower frequencies and to safely run at higher speeds when needed.</p>
+</section>
+<section id="flash-memory-wait-states">
+<h2>Flash memory wait states<a class="headerlink" href="#flash-memory-wait-states" title="Link to this heading"></a></h2>
+<p>The flash memory (where the program is stored) is slower, so the wait states are needed. By setting those delays, flash memory has enough time to keep up.
+The faster the clock, the more wait states are needed.</p>
+</section>
+<section id="pll">
+<h2>PLL<a class="headerlink" href="#pll" title="Link to this heading"></a></h2>
+<p>PLL (Phase-Locked Loop) configuration is like a gear system, the input and output “gears” are set to get the wanted clock speed. PLL helps take a slower, steady clock and turn it into a faster one that the microcontroller can use.</p>
+</section>
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="lessons.html" class="btn btn-neutral float-left" title="4.1.7. Lessons by Mirza Bajramovic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="clock_init.html" class="btn btn-neutral float-right" title="4.1.7.2. Clock Initialization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
