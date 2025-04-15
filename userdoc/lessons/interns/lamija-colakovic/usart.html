@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Initial Requirement &mdash; Maasu Internship 4 1 documentation</title>
+  <title>USART &mdash; Maasu Internship 4 1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
@@ -60,8 +60,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../introduction/introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/fundamentals.html">2. Fundamentals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../environment_setup/environment_setup.html">3. Development Environment Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../lessons/lessons.html">4. Lessons</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../requirements.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lessons.html">4. Lessons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements/requirements.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../faqs/faqs.html">6. Frequently Asked Questions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary/glossary.html">7. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../resources/resources.html">8. Resources</a></li>
@@ -81,9 +81,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Initial Requirement</li>
+      <li class="breadcrumb-item active">USART</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../_sources/userdoc/requirements/interns/amina-cehaja/initial.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/userdoc/lessons/interns/lamija-colakovic/usart.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -91,32 +91,65 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="initial-requirement">
-<h1>Initial Requirement<a class="headerlink" href="#initial-requirement" title="Link to this heading"></a></h1>
-<div class="need_container docutils container" id="SNCB-e04fbe07">
-<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744015038">
-<tbody>
-<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
-<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">label</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744015038" title="REQ_INT3_1744015038">REQ_INT3_1744015038</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
-</div>
-</td>
-</tr>
-<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
-<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
-<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
-<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
-<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
-<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Amina Cehaja</span></span></div>
-</span></span></div>
-<div class="line"><span></span></div>
-</div>
-</td>
-</tr>
-<tr class="need content row-odd"><td class="need content" colspan="1"><p>description</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+  <section id="usart">
+<h1>USART<a class="headerlink" href="#usart" title="Link to this heading"></a></h1>
+<p>USART (Universal Synchronous/Asynchronous Receiver/Transmitter) enables serial communication,
+supporting both synchronous and asynchronous modes—unlike UART, which is asynchronous only.</p>
+<p>Asynchronous Communication: No clock line, uses start/stop bits.</p>
+<p>Synchronous Communication: Uses a clock line; faster and more efficient.</p>
+<p>Sample &amp; Oversampling: Higher sampling rate (default is 16) improves reliability.</p>
+<p>Baud Rate: Speed of data transfer; needs correct configuration for reliable communication.</p>
+<p>USART Configuration Steps</p>
+<blockquote>
+<div><p>Enable USART Clock: Through the RCC register.</p>
+<p>Configure GPIO Pins:</p>
+<blockquote>
+<div><p>Set TX/RX pins to Alternate Function mode.</p>
+<p>Examples (AF7 unless noted):</p>
+<blockquote>
+<div><p>USART1: TX → PA9/PB6, RX → PA10/PB7</p>
+<p>USART2: TX → PA2/PD5, RX → PA3/PD6</p>
+<p>USART6: TX → PC6/PG14, RX → PC7/PG9 (AF8)</p>
+</div></blockquote>
+</div></blockquote>
+<p>Set Baud Rate:</p>
+<blockquote>
+<div><p>Formula (for oversampling by 16): USARTDIV = Fck / Baudrate</p>
+<p>Example for 115200 baud &amp; 50 MHz:
+USARTDIV = 50,000,000 / 115200 ≈ 434</p>
+</div></blockquote>
+<p>USART Mode Configuration:</p>
+<blockquote>
+<div><p>Set CR1 register bits:</p>
+<blockquote>
+<div><p>UE (USART Enable), TE (Transmitter), RE (Receiver)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Data Transmission</p>
+<blockquote>
+<div><p>Single Byte: Wait for TXE flag, write data to DR.</p>
+<p>Buffer: Send byte-by-byte after checking TXE each time.</p>
+</div></blockquote>
+<p>Example Application (USART2)</p>
+<blockquote>
+<div><p>Use PA2 (TX) and PA4 (RX).</p>
+<p>Set baud rate to 115200, oversampling = 16.</p>
+<p>In main function:</p>
+<blockquote>
+<div><p>Initialize USART</p>
+<p>Enable USART</p>
+<p>Transmit data</p>
+</div></blockquote>
+</div></blockquote>
+<p>Important Registers</p>
+<blockquote>
+<div><p>RCC: Enables USART clock</p>
+<p>CR1: Controls USART settings (UE, TE, RE)</p>
+<p>BRR: Baud Rate Register</p>
+<p>DR: Data Register (for sending data)</p>
+<p>SR: Status Register (check TXE flag)</p>
+</div></blockquote>
 </section>
 
 
