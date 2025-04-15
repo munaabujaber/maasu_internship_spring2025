@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.1.3.1. Lesson 1 - CLOCK &mdash; Maasu Internship 4 1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/libs/html/datatables.min.css?v=4b4fd840" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common.css?v=bd9ab754" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/styles.css?v=6c8eb985" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/layouts.css?v=448c382f" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/modern.css?v=ffa536d2" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=29a6c3e3"></script>
+        <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/sphinx-data-viewer/jsonview.bundle.js?v=18cd53c5"></script>
+        <script src="../../../../_static/sphinx-data-viewer/jsonview_loader.js?v=f7ff7e7d"></script>
+        <script src="../../../../_static/sphinx-needs/libs/html/datatables.min.js?v=8a4aee21"></script>
+        <script src="../../../../_static/sphinx-needs/libs/html/datatables_loader.js?v=a2cae175"></script>
+        <script src="../../../../_static/sphinx-needs/libs/html/sphinx_needs_collapse.js?v=f783d6a5"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="4.1.3.2. Lesson 2 - GPIO" href="gpio.html" />
+    <link rel="prev" title="4.1.3. Lessons by Dzenana Selimovic" href="lessons.html" />
+<link href="../../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Maasu Internship 4
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/fundamentals.html">2. Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../environment_setup/environment_setup.html">3. Development Environment Setup</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../lessons.html">4. Lessons</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">4.1. Lessons written by each intern</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../amina-cehaja/lessons.html">4.1.1. Lessons by Amina Cehaja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asja-resic/lessons.html">4.1.2. Lessons by Asja Resic</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="lessons.html">4.1.3. Lessons by Dzenana Selimovic</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.1.3.1. Lesson 1 - CLOCK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpio.html">4.1.3.2. Lesson 2 - GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="usart.html">4.1.3.3. Lesson 3 - USART</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ibro-rebronja/lessons.html">4.1.4. Lessons by Ibro Rebronja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lamija-colakovic/lessons.html">4.1.5. Lessons by Lamija Colakovic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lamija-imamovic/lessons.html">4.1.6. Lessons by Lamija Imamovic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mirza-bajramovic/lessons.html">4.1.7. Lessons by Mirza Bajramovic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../muhamed-sjekirica/lessons.html">4.1.8. Muhamed Sjekirica Lessons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../samir-dosljak/lessons.html">4.1.9. Lessons by Dino Javor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../requirements/requirements.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/faqs.html">6. Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources/resources.html">8. Resources</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Maasu Internship 4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../lessons.html"><span class="section-number">4. </span>Lessons</a></li>
+          <li class="breadcrumb-item"><a href="../lessons.html"><span class="section-number">4.1. </span>Lessons written by each intern</a></li>
+          <li class="breadcrumb-item"><a href="lessons.html"><span class="section-number">4.1.3. </span>Lessons by Dzenana Selimovic</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1.3.1. </span>Lesson 1 - CLOCK</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/userdoc/lessons/interns/dzenana-selimovic/clock.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="lesson-1-clock">
+<h1><span class="section-number">4.1.3.1. </span>Lesson 1 - CLOCK<a class="headerlink" href="#lesson-1-clock" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2><span class="section-number">4.1.3.1.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The clock system in STM32F411 is a crucial part of its operation, controlling the frequency of the core and peripheral clocks. In this document, we will discuss the fundamentals of the STM32F411 clock system, including the usage of Phase-Locked Loops (PLLs), prescalers and clock switching techniques to optimize power consumption and system performance.</p>
+</section>
+<section id="phase-locked-loop-pll">
+<h2><span class="section-number">4.1.3.1.2. </span>Phase-Locked Loop (PLL)<a class="headerlink" href="#phase-locked-loop-pll" title="Link to this heading"></a></h2>
+<p>A Phase-Locked Loop (PLL) is a feedback control system that generates an output signal whose phase is fixed relative to the phase of the input signal. This mechanism allows for tracking both the frequency and phase of the input signal. The PLL can lock the input and output frequencies, ensuring that both remain synchronized.</p>
+<p>In the context of PLLs, the frequency and phase of the signals are closely related. The relationship between frequency (f), phase (ϕ), and time (T) is given by the formula:</p>
+<div class="math notranslate nohighlight">
+\[f = \frac{1}{T}\]</div>
+<p>Where:
+- <strong>f</strong> is the frequency of the signal (in Hertz),
+- <strong>T</strong> is the time period of the signal (in seconds).</p>
+<p>By adjusting the PLL, you can modify the output frequency and ensure the synchronization of the phases, which is essential for maintaining consistent operation in various applications.</p>
+</section>
+<section id="why-plls-are-preferred-over-hsi">
+<h2><span class="section-number">4.1.3.1.3. </span>Why PLLs are Preferred over HSI<a class="headerlink" href="#why-plls-are-preferred-over-hsi" title="Link to this heading"></a></h2>
+<p>When configuring the clock system in STM32F411, the High-Speed External (HSE) oscillator is preferred over the High-Speed Internal (HSI) oscillator. This is primarily due to the following reasons:
+- <strong>Stability</strong>: The HSE is typically more stable and accurate compared to the internal HSI, making it suitable for applications where precise timing is critical.
+- <strong>Frequency Range</strong>: The HSE offers a wider and more flexible frequency range, allowing for better performance tuning.</p>
+</section>
+<section id="intermediate-pll-prescaler-stages">
+<h2><span class="section-number">4.1.3.1.4. </span>Intermediate PLL/Prescaler Stages<a class="headerlink" href="#intermediate-pll-prescaler-stages" title="Link to this heading"></a></h2>
+<p>Many microcontrollers, including STM32F411, implement multiple stages of PLLs and prescalers. These stages provide developers with more control over the clock speed, allowing them to optimize the balance between performance and power consumption.</p>
+</section>
+<section id="power-efficiency">
+<h2><span class="section-number">4.1.3.1.5. </span>Power Efficiency<a class="headerlink" href="#power-efficiency" title="Link to this heading"></a></h2>
+<p>As mentioned earlier, the clock speed directly impacts the performance and power consumption of the MCU. In scenarios where high performance is not required, reducing the clock speed helps conserve energy, which is essential for battery-powered devices. Lowering the clock speed can also reduce heat generation, especially in systems without active cooling.</p>
+<p>The STM32F411 and other modern MCUs (e.g., STM32L0/1/4 series) introduce intermediate PLL and prescaler stages, enabling fine-grained control over the clock speed. This is particularly useful in low-power applications, such as:</p>
+<ul class="simple">
+<li><p><strong>Medical devices (MedTech)</strong>: Devices worn on the body where energy efficiency and battery life are paramount.</p></li>
+<li><p><strong>Embedded systems</strong>: Systems housed in enclosures where managing power and heat is critical.</p></li>
+</ul>
+<p>Example: Clock Speed Adjustment for Power Saving</p>
+<p>In real-time applications, you may choose to reduce the clock speed when the system does not require fast response times. This reduces the overall power consumption, extending battery life and lowering heat generation. For example, in medical devices, a reduced clock speed can help the device last longer between charges.</p>
+</section>
+<section id="clock-speed-control-in-stm32f411">
+<h2><span class="section-number">4.1.3.1.6. </span>Clock Speed Control in STM32F411<a class="headerlink" href="#clock-speed-control-in-stm32f411" title="Link to this heading"></a></h2>
+<p>In STM32F411, the clock system can be controlled through the following methods:</p>
+<ul class="simple">
+<li><p><strong>Switching between Low Power and High Power Clocks</strong>: You can switch between different clock sources (e.g., HSI, HSE) and use prescalers or PLLs to adjust the clock speed. The flexibility to select low-power clock sources allows optimization of the power consumption, especially in scenarios where system response time is not critical.</p></li>
+<li><p><strong>Using PLL with Multiple Stages</strong>: STM32F411 provides several stages of PLLs and prescalers, allowing for more precise control over the clock output. By enabling or disabling certain stages of the PLL or prescalers, you can optimize the clock frequency according to the needs of the application.</p></li>
+</ul>
+</section>
+<section id="clock-switching-and-power-management">
+<h2><span class="section-number">4.1.3.1.7. </span>Clock Switching and Power Management<a class="headerlink" href="#clock-switching-and-power-management" title="Link to this heading"></a></h2>
+<p>In embedded systems where power management is crucial, selectively turning on or off specific parts of the clock system helps reduce power consumption. STM32F411 allows switching between low and high-speed clock sources, optimizing both performance and energy usage. This is particularly important in battery-operated devices, where every bit of energy saved translates to longer operation times.</p>
+<p>Using a low-power clock source for less demanding tasks helps in saving battery power without sacrificing system stability or functionality.</p>
+</section>
+<section id="analysis-of-system-behavior">
+<h2><span class="section-number">4.1.3.1.8. </span>Analysis of System Behavior<a class="headerlink" href="#analysis-of-system-behavior" title="Link to this heading"></a></h2>
+<p>In some cases, you may need to reduce the clock speed to analyze the system behavior better. Slowing down the clock allows you to capture signals more clearly on an oscilloscope or logic analyzer. This is particularly useful when debugging or analyzing signals in a more controlled manner.</p>
+</section>
+<section id="conclusion">
+<h2><span class="section-number">4.1.3.1.9. </span>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>By leveraging the flexibility of the STM32F411 clock system, developers can strike a balance between performance, power consumption, and heat generation. The advanced features of PLLs and prescalers, combined with clock switching, enable efficient operation for a wide range of applications, particularly in low-power, battery-operated systems.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lessons.html" class="btn btn-neutral float-left" title="4.1.3. Lessons by Dzenana Selimovic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gpio.html" class="btn btn-neutral float-right" title="4.1.3.2. Lesson 2 - GPIO" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Maasu BH d.o.o..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
