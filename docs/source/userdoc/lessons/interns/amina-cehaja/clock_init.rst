@@ -2,10 +2,6 @@
 CLOCK SUMMARY
 =============================
 
-..contents:: Table of Contents
-    :local:
-    :depth: 2
-
 Introduction
 ------------
 The clock is crucial to ensure an accurate and efficient operation. It is like a heartbeat-determines how fast the system runs. With proper configuration, the following is achieved: accuracy (precise frequency), optimal performance, and power efficiency.

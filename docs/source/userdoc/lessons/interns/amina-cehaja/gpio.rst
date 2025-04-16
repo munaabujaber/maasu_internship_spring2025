@@ -2,10 +2,6 @@
 GPIO SUMMARY
 =============================
 
-..contents:: Table of Contents
-    :local:
-    :depth: 2
-
 Introduction
 ------------
 GPIO (General-Purpose Input/Output) plays a crucial role in embedded systems allowing microcontrollers to interact with external devices. Before working with GPIO, it is important to understand what tasks the microcontroller needs to perform (to read sensors, control LEDs, communicate with other devices, or process analog signal). Based on the task, the GPIO pins should be configured. 
