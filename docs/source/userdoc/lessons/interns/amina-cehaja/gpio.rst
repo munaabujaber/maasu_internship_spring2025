@@ -20,7 +20,7 @@ The configuration of GPIO is done through ports and registers. GPIO pins are gro
 
 To decide which register to use, we consider what we want the pin to do. For example, if we want to set a pin to output mode, we use the MODER register; to send a high or low signal, we write to the ODR; to read a pin’s input, we read from the IDR. If the pin needs to use a peripheral function like UART, we configure the AFR.
 
-USE CASES
+Use Cases
 ----------
 By correctly setting GPIO pins using these registers and modes, following applications can be done:
     Digital Control - to control LEDs, relays, small motors 
