@@ -8,4 +8,4 @@ Lessons by Amina Cehaja
 
     gpio
     clock_init
-    usart
+    usart 
