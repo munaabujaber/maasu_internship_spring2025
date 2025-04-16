@@ -2,10 +2,10 @@
 Lessons by Amina Cehaja
 ============================
 
-..toctree::
+.. toctree::
     :maxdepth: 2
-    :caption: Contents:
+    :caption: Lessons by Amina
 
-    gpio 
+    gpio
     clock_init
-    usart 
+    usart
