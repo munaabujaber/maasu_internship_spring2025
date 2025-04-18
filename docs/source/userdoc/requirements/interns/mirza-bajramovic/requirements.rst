@@ -6,4 +6,7 @@ Requirements by Mirza Bajramovic
    :maxdepth: 1
 
    initial
+   GPIO
+   USART
+   clock
 
