@@ -6,3 +6,6 @@ Requirements by Dzenana Selimovic
    :maxdepth: 1
    
    initial
+   clock
+   gpio
+   usart
