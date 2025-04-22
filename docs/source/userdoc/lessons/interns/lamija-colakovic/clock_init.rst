@@ -3,7 +3,6 @@ Clock Initialization
 ====================
 Clock initialization is a critical step in setting up an STM32 microcontroller to ensure accurate and efficient operation. 
 
-
 RCC (Reset and Clock Control):
 
 Manages reset and clock control, configuring system clocks and overseeing the reset circuitry within the STM32 microcontroller.

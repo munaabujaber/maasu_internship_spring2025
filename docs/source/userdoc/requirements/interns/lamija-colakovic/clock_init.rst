@@ -56,7 +56,7 @@ Requirements for Clock initialization
    :references: STM32F411 Overview, Introduction to clock initialization
    :verification-and-validation: 
 
-   The system shall use the RCC_PLLCFGR_PLLM (PLL Configuration Register) bit mask to access the PLLM field in the RCC_PLLCFGR register.
+   The system shall use the RCC_PLLCFGR_PLLM bit mask to read or write the PLLM field in the RCC_PLLCFGR register, which defines the input division factor for the PLL.
 
 
 .. req:: RCC_PLLCFGR_PLLM_Pos definition
@@ -71,7 +71,8 @@ Requirements for Clock initialization
    :references: STM32F411 Overview, Introduction to clock initialization
    :verification-and-validation: 
    
-   The system shall use the RCC_PLLCFGR_PLLM_Pos definition to correctly position the PLLM bits in the RCC_PLLCFGR register.
+   The system shall shift the PLLM configuration value by RCC_PLLCFGR_PLLM_Pos bits to align it with its field position in the RCC_PLLCFGR register.
+
 
 
 
