@@ -6,3 +6,6 @@ Requirements by Ibro Rebronja
    :maxdepth: 1
 
    initial
+   GPIO
+   USART
+   clock_init
