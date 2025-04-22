@@ -47,7 +47,24 @@ GPIO Requirements
 
    Description:
    The output speed must be selected using the OSPEEDR register.
-   The speed can be low,medium,fast or high(see glossary).
+   
+  .. req:: GPIO output speed
+     :id: REQ_INT3_1745320115
+     :status: Draft
+     :date-released: 22.4.2025
+     :priority: Low
+     :submitted-by: `Muhamed Sjekirica
+     :modified-by:
+     :category: Non-Functional
+     :safety-asil: 
+     :references: STM32F411 RM0383, Section 8.4.4
+     :verification-and-validation: Code inspection
+  
+     Description:
+     The GPIO output speed determines the rate at which the output signal transitions between low and high states. 
+     This setting is crucial for controlling the rise and fall times of the signal,
+     which in turn affects the signal integrity and electromagnetic interference (EMI)
+  
 
 .. req:: GPIO input resistor configuration
    :id: REQ_INT3_1744885581
@@ -62,7 +79,7 @@ GPIO Requirements
    :verification-and-validation: Code inspection
 
    Description:
-   When pin is input mode, pull-up or pull-down resistors must be configured using the PUPDR register.
+   Pull-up or pull-down resistors must be configured using the PUPDR register, when pin is in input mode.
 
 .. req:: GPIO alternate function setup
    :id: REQ_INT3_1744885731
@@ -77,7 +94,7 @@ GPIO Requirements
    :verification-and-validation: Code inspection
 
    Description:
-   Alternate functions must be set using AFRL (pins 0-7) or AFRH (pins 8-15).
+   Alternate functions must be set using AFRL or AFRH.
 
 .. req:: GPIO interrupt configuration
    :id: REQ_INT3_1744885844

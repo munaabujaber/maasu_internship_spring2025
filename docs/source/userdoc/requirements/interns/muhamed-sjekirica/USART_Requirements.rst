@@ -30,7 +30,7 @@ USART Requirements
    :verification-and-validation: Code inspection
 
    Description:
-   The BRR register must be set with the correct value to match the desired baud rate for communication.
+   The BRR register must be set with the correct value to match the required baud rate for communication.
 
 .. req:: USART mode and enable
    :id: REQ_INT3_1744888517
@@ -45,8 +45,8 @@ USART Requirements
    :verification-and-validation: Code inspection
 
    Description:
-   The USART must be enabled by setting the UE bit in CR1 register. 
-   Also, the TE (Transmitter Enable) and RE (Receiver Enable) bits must be set in CR1 for transmission and reception.
+   The USART must be enabled by setting the UE bit in the CR1 register,
+   and both the TE (Transmitter Enable) and RE (Receiver Enable) bits must be set in the CR1 register to enable transmission and reception functionalities.
 
 .. req:: USART data transmission
    :id: REQ_INT3_1744888604
