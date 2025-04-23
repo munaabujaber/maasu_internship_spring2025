@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.1.7.2. GPIO Requirements &mdash; Maasu Internship 4 1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/libs/html/datatables.min.css?v=4b4fd840" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common.css?v=bd9ab754" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/styles.css?v=6c8eb985" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/layouts.css?v=448c382f" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/modern.css?v=ffa536d2" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=29a6c3e3"></script>
+        <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/sphinx-data-viewer/jsonview.bundle.js?v=18cd53c5"></script>
+        <script src="../../../../_static/sphinx-data-viewer/jsonview_loader.js?v=f7ff7e7d"></script>
+        <script src="../../../../_static/sphinx-needs/libs/html/datatables.min.js?v=8a4aee21"></script>
+        <script src="../../../../_static/sphinx-needs/libs/html/datatables_loader.js?v=a2cae175"></script>
+        <script src="../../../../_static/sphinx-needs/libs/html/sphinx_needs_collapse.js?v=f783d6a5"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="5.1.7.3. USART Requirements" href="USART.html" />
+    <link rel="prev" title="5.1.7.1. Initial Requirement" href="initial.html" />
+<link href="../../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Maasu Internship 4
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/fundamentals.html">2. Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../environment_setup/environment_setup.html">3. Development Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lessons/lessons.html">4. Lessons</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../requirements.html">5. Requirements</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../requirements.html">5.1. Requirements written by each intern</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../amina-cehaja/requirements.html">5.1.1. Requirements by Amina Cehaja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asja-resic/requirements.html">5.1.2. Requirements by Asja Resic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dzenana-selimovic/requirements.html">5.1.3. Requirements by Dzenana Selimovic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ibro-rebronja/requirements.html">5.1.4. Requirements by Ibro Rebronja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lamija-colakovic/requirements.html">5.1.5. Requirements by Lamija Colakovic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lamija-imamovic/requirements.html">5.1.6. Requirements by Lamija Imamovic</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="requirements.html">5.1.7. Requirements by Mirza Bajramovic</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="initial.html">5.1.7.1. Initial Requirement</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">5.1.7.2. GPIO  Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USART.html">5.1.7.3. USART  Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html">5.1.7.4. Clock  Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../muhamed-sjekirica/requirements.html">5.1.8. Requirements by Muhamed Sjekirica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../samir-dosljak/requirements.html">5.1.9. Requirements by Samir Dosljak</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/faqs.html">6. Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources/resources.html">8. Resources</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Maasu Internship 4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../requirements.html"><span class="section-number">5. </span>Requirements</a></li>
+          <li class="breadcrumb-item"><a href="../requirements.html"><span class="section-number">5.1. </span>Requirements written by each intern</a></li>
+          <li class="breadcrumb-item"><a href="requirements.html"><span class="section-number">5.1.7. </span>Requirements by Mirza Bajramovic</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.1.7.2. </span>GPIO  Requirements</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/userdoc/requirements/interns/mirza-bajramovic/GPIO.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gpio-requirements">
+<h1><span class="section-number">5.1.7.2. </span>GPIO  Requirements<a class="headerlink" href="#gpio-requirements" title="Link to this heading"></a></h1>
+<div class="need_container docutils container" id="SNCB-7406e4ce">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744880333">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">GPIO Mode Overview</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744880333" title="REQ_INT3_1744880333">REQ_INT3_1744880333</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1744792622</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>Each GPIO pin on the STM32 microcontroller can operate in one of four modes defined in the MODER register:</p>
+<ul class="simple">
+<li><p><strong>Input mode (00)</strong>: Configures the pin to receive signals from external devices.</p></li>
+<li><p><strong>General-purpose output mode (01)</strong>: Allows the pin to drive logic levels to connected components.</p></li>
+<li><p><strong>Alternate function mode (10)</strong>: Connects the pin to internal peripherals such as USART, SPI, or I2C.</p></li>
+<li><p><strong>Analog mode (11)</strong>: Enables analog signal input/output, often used with ADCs and DACs.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-c115e63f">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744792622">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">GPIO Mode Configuration</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744792622" title="REQ_INT3_1744792622">REQ_INT3_1744792622</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The system shall support configuring each GPIO pin to input, output, analog, or alternate function mode.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-7f845eb7">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744888229">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Output Types</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744888229" title="REQ_INT3_1744888229">REQ_INT3_1744888229</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1744883435</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>GPIO output pins can operate in two output types: push-pull and open-drain.</p>
+<ul class="simple">
+<li><p>In <strong>push-pull mode</strong>, the pin actively drives both high and low levels.</p></li>
+<li><p>In <strong>open-drain mode</strong>, the pin can only drive low, and an external pull-up resistor is required to achieve a high level.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-ad0c9127">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744883435">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Output Type Selection</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744883435" title="REQ_INT3_1744883435">REQ_INT3_1744883435</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The system shall allow setting the output type of GPIO pins to either push-pull or open-drain mode.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-0dd3e14c">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744888541">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">GPIO Input States</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744888541" title="REQ_INT3_1744888541">REQ_INT3_1744888541</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1744884046</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>GPIO input pins can be configured with three internal states:</p>
+<ul class="simple">
+<li><p><strong>Pull-up</strong>: Connects the pin to a high logic level through an internal resistor.</p></li>
+<li><p><strong>Pull-down</strong>: Connects the pin to a low logic level through an internal resistor.</p></li>
+<li><p><strong>Floating</strong>: Leaves the pin unconnected internally, allowing the input state to be determined entirely by external circuitry.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-4cc82572">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744884046">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">GPIO Input State Configuration</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744884046" title="REQ_INT3_1744884046">REQ_INT3_1744884046</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The system shall support configuring internal pull-up, pull-down, or floating states for GPIO pins configured as input using the PUPDR register.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-ae59082d">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744885915">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Output Speed Configuration</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744885915" title="REQ_INT3_1744885915">REQ_INT3_1744885915</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The system shall support configuring the output speed of GPIO pins to low, medium, fast, or high using the OSPEEDR register.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-b4e9e44f">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744885930">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Input State Reading</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744885930" title="REQ_INT3_1744885930">REQ_INT3_1744885930</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The system shall allow reading the logical state (high or low) of each GPIO pin configured as input using the IDR register.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-75a9fe22">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744886064">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">GPIO Output State Control</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744886064" title="REQ_INT3_1744886064">REQ_INT3_1744886064</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The system shall support setting the logical state of each GPIO pin configured as output.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-4d24c23b">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744887451">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">label</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744887451" title="REQ_INT3_1744887451">REQ_INT3_1744887451</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The system shall allow the user to select alternate functions for GPIO pins used by peripherals such as USART, SPI, or I2C.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-dbb57ef6">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744889286">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">BSRR Description</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744889286" title="REQ_INT3_1744889286">REQ_INT3_1744889286</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1744888053</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The BSRR (Bit Set/Reset Register) is used to set or reset GPIO output pins atomically.</p>
+<ul class="simple">
+<li><p>Writing to bits 0–15 sets the corresponding pin.</p></li>
+<li><p>Writing to bits 16–31 resets the corresponding pin.</p></li>
+</ul>
+<p>This prevents conflicts caused by read-modify-write operations and ensures interrupt-safe behavior.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-54826ffe">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744888053">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Atomic Pin Reset Using BSRR</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744888053" title="REQ_INT3_1744888053">REQ_INT3_1744888053</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The system shall perform GPIO pin set and reset operations using the BSRR register to ensure atomic access without affecting other pins.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-41363c28">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1744905253">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">GPIO Performance Requirement</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1744905253" title="REQ_INT3_1744905253">REQ_INT3_1744905253</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Non-Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">Mirza Bajramovic</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">17.04.2025</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>The system shall ensure that GPIO pin state changes are completed within 10 milliseconds.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="initial.html" class="btn btn-neutral float-left" title="5.1.7.1. Initial Requirement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="USART.html" class="btn btn-neutral float-right" title="5.1.7.3. USART Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Maasu BH d.o.o..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
