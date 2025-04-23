@@ -7,14 +7,14 @@ Clock Requirements
    :status: Draft
    :date-released:
    :priority: Low
-   :submitted-by: Ibro Rebronja <https://github.com/IbroRebronja>_
+   :submitted-by: `Ibro Rebronja <https://github.com/IbroRebronja>`_
    :modified-by:
    :category: Functional
    :safety-asil: 
    :references: 
    :verification-and-validation: 
 
-   The system shall allow configuring the clock source (HSI, HSE, LSI, LSE) via the RCC_CR register.
+   The system shall allow configuring the clock source HSI, HSE, LSI, LSE via the RCC_CR register.
 
    .. impl:: 
       :id: IMP_INT3_1744372230
@@ -22,19 +22,75 @@ Clock Requirements
       :dependency: Clock Driver
       :status: Pending
 
+.. req:: High-Speed Internal HSI Clock Description
+   :id: REQ_INT3_1744373001
+   :status: Draft
+   :date-released:
+   :priority: Low
+   :submitted-by: `Ibro Rebronja <https://github.com/IbroRebronja>`_
+   :modified-by:
+   :category: Informational
+   :safety-asil:
+   :references:
+   :verification-and-validation:
+
+   The HSI is an internal RC oscillator that provides an 8 MHz clock source. It is available immediately after reset and is used as the default system clock source.
+
+.. req:: High-Speed External HSE Clock Description
+   :id: REQ_INT3_1744373002
+   :status: Draft
+   :date-released:
+   :priority: Low
+   :submitted-by: `Ibro Rebronja <https://github.com/IbroRebronja>`_
+   :modified-by:
+   :category: Informational
+   :safety-asil:
+   :references:
+   :verification-and-validation:
+
+   The HSE is an external clock source, typically a crystal oscillator. It provides a more accurate and stable frequency compared to HSI and is suitable for applications like USB and real-time clocks.
+
+.. req:: Low-Speed Internal LSI Clock Description
+   :id: REQ_INT3_1744373003
+   :status: Draft
+   :date-released:
+   :priority: Low
+   :submitted-by: `Ibro Rebronja <https://github.com/IbroRebronja>`_
+   :modified-by:
+   :category: Informational
+   :safety-asil:
+   :references:
+   :verification-and-validation:
+
+   The LSI is an internal low-frequency clock around 32 kHz used for low-power applications and internal watchdogs. It is not very accurate but is always available without external components.
+
+.. req:: Low-Speed External LSE Clock Description
+   :id: REQ_INT3_1744373004
+   :status: Draft
+   :date-released:
+   :priority: Low
+   :submitted-by: `Ibro Rebronja <https://github.com/IbroRebronja>`_
+   :modified-by:
+   :category: Informational
+   :safety-asil:
+   :references:
+   :verification-and-validation:
+
+   The LSE is an external 32.768 kHz crystal used for applications that require precise timekeeping, such as real-time clocks (RTC).
+
 .. req:: Enable PLL
    :id: REQ_INT3_1744372231
    :status: Draft
    :date-released:
    :priority: Low
-   :submitted-by: Ibro Rebronja <https://github.com/IbroRebronja>_
+   :submitted-by: `Ibro Rebronja <https://github.com/IbroRebronja>`_
    :modified-by:
    :category: Functional
    :safety-asil: 
    :references: 
    :verification-and-validation: 
 
-   The system shall allow enabling the PLL (Phase-Locked Loop) for clock multiplication via the PLLCFGR register.
+   The system shall allow enabling the PLL Phase-Locked Loop for clock multiplication via the PLLCFGR register.
 
    .. impl:: 
       :id: IMP_INT3_1744372231
@@ -47,7 +103,7 @@ Clock Requirements
    :status: Draft
    :date-released:
    :priority: Low
-   :submitted-by: Ibro Rebronja <https://github.com/IbroRebronja>_
+   :submitted-by: `Ibro Rebronja <https://github.com/IbroRebronja>`_
    :modified-by:
    :category: Functional
    :safety-asil: 
@@ -67,7 +123,7 @@ Clock Requirements
    :status: Draft
    :date-released:
    :priority: Low
-   :submitted-by: Ibro Rebronja <https://github.com/IbroRebronja>_
+   :submitted-by: `Ibro Rebronja <https://github.com/IbroRebronja>`_
    :modified-by:
    :category: Functional
    :safety-asil: 
@@ -87,7 +143,7 @@ Clock Requirements
    :status: Draft
    :date-released:
    :priority: Low
-   :submitted-by: Ibro Rebronja <https://github.com/IbroRebronja>_
+   :submitted-by: `Ibro Rebronja <https://github.com/IbroRebronja>`_
    :modified-by:
    :category: Functional
    :safety-asil: 

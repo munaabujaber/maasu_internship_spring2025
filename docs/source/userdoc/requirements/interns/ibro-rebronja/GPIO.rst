@@ -75,7 +75,7 @@ GPIO Requirements
    :references: 
    :verification-and-validation: 
 
-   The system shall allow output speed configuration for GPIO pins (low, medium, fast, high) via the OSPEEDR register.
+   The system shall allow output speed configuration for GPIO pins low, medium, fast, high via the OSPEEDR register.
 
    .. impl:: 
       :id: IMP_INT3_1744372225
@@ -95,7 +95,7 @@ GPIO Requirements
    :references: 
    :verification-and-validation: 
 
-   The system shall support assigning alternate functions (such as UART, SPI, or I2C) to GPIO pins via AFRL or AFRH registers.
+   The system shall support assigning alternate functions such as UART, SPI, or I2C to GPIO pins via AFRL or AFRH registers.
 
    .. impl:: 
       :id: IMP_INT3_1744372226
