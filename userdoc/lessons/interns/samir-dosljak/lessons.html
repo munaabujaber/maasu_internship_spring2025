@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.1.9. Lessons by Dino Javor &mdash; Maasu Internship 4 1 documentation</title>
+  <title>4.1.9. Lessons by Samir Dosljak &mdash; Maasu Internship 4 1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
@@ -32,7 +32,7 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="5. Requirements" href="../../../requirements/requirements.html" />
+    <link rel="next" title="4.1.9.1. Lesson 1: GPIO" href="GPIO.html" />
     <link rel="prev" title="4.1.8.3. USART" href="../muhamed-sjekirica/usart.html" />
 <link href="../../../../_static/style.css" rel="stylesheet" type="text/css">
 
@@ -72,7 +72,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../lamija-imamovic/lessons.html">4.1.6. Lessons by Lamija Imamovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mirza-bajramovic/lessons.html">4.1.7. Lessons by Mirza Bajramovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../muhamed-sjekirica/lessons.html">4.1.8. Muhamed Sjekirica Lessons</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.9. Lessons by Dino Javor</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.1.9. Lessons by Samir Dosljak</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">4.1.9.1. Lesson 1: GPIO</a></li>
+<li class="toctree-l4"><a class="reference internal" href="clock.html">4.1.9.2. Lesson 2: Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USART.html">4.1.9.3. Lesson 3: USART</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -99,7 +104,7 @@
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../lessons.html"><span class="section-number">4. </span>Lessons</a></li>
           <li class="breadcrumb-item"><a href="../lessons.html"><span class="section-number">4.1. </span>Lessons written by each intern</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4.1.9. </span>Lessons by Dino Javor</li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1.9. </span>Lessons by Samir Dosljak</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../_sources/userdoc/lessons/interns/samir-dosljak/lessons.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -109,8 +114,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="lessons-by-dino-javor">
-<h1><span class="section-number">4.1.9. </span>Lessons by Dino Javor<a class="headerlink" href="#lessons-by-dino-javor" title="Link to this heading"></a></h1>
+  <section id="lessons-by-samir-dosljak">
+<h1><span class="section-number">4.1.9. </span>Lessons by Samir Dosljak<a class="headerlink" href="#lessons-by-samir-dosljak" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Lessons:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="GPIO.html">4.1.9.1. Lesson 1: GPIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clock.html">4.1.9.2. Lesson 2: Clock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#cr-control-register">4.1.9.2.1. CR (Control Register)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#apb1enr-apb1-peripheral-clock-enable-register">4.1.9.2.2. APB1ENR (APB1 Peripheral Clock Enable Register)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#pll-phase-locked-loop">4.1.9.2.3. PLL (Phase-Locked Loop)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#pwr-power-control">4.1.9.2.4. PWR (Power Control)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#flash-acr">4.1.9.2.5. FLASH_ACR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html#importance-of-clock-initialization">4.1.9.2.6. Importance of Clock Initialization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="USART.html">4.1.9.3. Lesson 3: USART</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="USART.html#communication-modes">4.1.9.3.1. Communication Modes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="USART.html#key-concepts">4.1.9.3.2. Key Concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="USART.html#usart-configuration">4.1.9.3.3. USART Configuration</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </section>
 
 
@@ -118,7 +144,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../muhamed-sjekirica/usart.html" class="btn btn-neutral float-left" title="4.1.8.3. USART" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../../requirements/requirements.html" class="btn btn-neutral float-right" title="5. Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GPIO.html" class="btn btn-neutral float-right" title="4.1.9.1. Lesson 1: GPIO" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

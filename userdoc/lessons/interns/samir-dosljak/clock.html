@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4.1.1.2. CLOCK SUMMARY &mdash; Maasu Internship 4 1 documentation</title>
+  <title>4.1.9.2. Lesson 2: Clock &mdash; Maasu Internship 4 1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
@@ -32,8 +32,8 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="4.1.1.3. USART SUMMARY" href="usart.html" />
-    <link rel="prev" title="4.1.1.1. GPIO SUMMARY" href="gpio.html" />
+    <link rel="next" title="4.1.9.3. Lesson 3: USART" href="USART.html" />
+    <link rel="prev" title="4.1.9.1. Lesson 1: GPIO" href="GPIO.html" />
 <link href="../../../../_static/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -64,12 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../environment_setup/environment_setup.html">3. Development Environment Setup</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../lessons.html">4. Lessons</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../lessons.html">4.1. Lessons written by each intern</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="lessons.html">4.1.1. Lessons by Amina Cehaja</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="gpio.html">4.1.1.1. GPIO SUMMARY</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">4.1.1.2. CLOCK SUMMARY</a></li>
-<li class="toctree-l4"><a class="reference internal" href="usart.html">4.1.1.3. USART SUMMARY</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../amina-cehaja/lessons.html">4.1.1. Lessons by Amina Cehaja</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../asja-resic/lessons.html">4.1.2. Lessons by Asja Resic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dzenana-selimovic/lessons.html">4.1.3. Lessons by Dzenana Selimovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ibro-rebronja/lessons.html">4.1.4. Lessons by Ibro Rebronja</a></li>
@@ -77,7 +72,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../lamija-imamovic/lessons.html">4.1.6. Lessons by Lamija Imamovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../mirza-bajramovic/lessons.html">4.1.7. Lessons by Mirza Bajramovic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../muhamed-sjekirica/lessons.html">4.1.8. Muhamed Sjekirica Lessons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../samir-dosljak/lessons.html">4.1.9. Lessons by Samir Dosljak</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="lessons.html">4.1.9. Lessons by Samir Dosljak</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="GPIO.html">4.1.9.1. Lesson 1: GPIO</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">4.1.9.2. Lesson 2: Clock</a></li>
+<li class="toctree-l4"><a class="reference internal" href="USART.html">4.1.9.3. Lesson 3: USART</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -104,10 +104,10 @@
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../lessons.html"><span class="section-number">4. </span>Lessons</a></li>
           <li class="breadcrumb-item"><a href="../lessons.html"><span class="section-number">4.1. </span>Lessons written by each intern</a></li>
-          <li class="breadcrumb-item"><a href="lessons.html"><span class="section-number">4.1.1. </span>Lessons by Amina Cehaja</a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4.1.1.2. </span>CLOCK SUMMARY</li>
+          <li class="breadcrumb-item"><a href="lessons.html"><span class="section-number">4.1.9. </span>Lessons by Samir Dosljak</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.1.9.2. </span>Lesson 2: Clock</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../../_sources/userdoc/lessons/interns/amina-cehaja/clock_init.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../../_sources/userdoc/lessons/interns/samir-dosljak/clock.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -115,37 +115,71 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="clock-summary">
-<h1><span class="section-number">4.1.1.2. </span>CLOCK SUMMARY<a class="headerlink" href="#clock-summary" title="Link to this heading"></a></h1>
-<section id="introduction">
-<h2><span class="section-number">4.1.1.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
-<p>The clock is crucial to ensure an accurate and efficient operation. It is like a heartbeat-determines how fast the system runs. With proper configuration, the following is achieved: accuracy (precise frequency), optimal performance, and power efficiency.</p>
+  <section id="lesson-2-clock">
+<h1><span class="section-number">4.1.9.2. </span>Lesson 2: Clock<a class="headerlink" href="#lesson-2-clock" title="Link to this heading"></a></h1>
+<p>Clocks are periodic signals (usually square periodic signals) essential for the proper functioning of microcontrollers, and they determine how fast the microcontroller operates (the speed of execution of the microcontroller). One of the key terms related to the clock is RCC (Reset and Clock Control).</p>
+<p>The RCC (Reset and Clock Control) is a peripheral that manages reset and control of the clock signals. Some of the registers within RCC are:</p>
+<ul class="simple">
+<li><p><strong>CR</strong> (Control Register)</p></li>
+<li><p><strong>APB1ENR</strong> (APB1 Peripheral Clock Enable Register)</p></li>
+<li><p><strong>PLLCFGR</strong> (PLL Configuration Register)</p></li>
+</ul>
+<section id="cr-control-register">
+<h2><span class="section-number">4.1.9.2.1. </span>CR (Control Register)<a class="headerlink" href="#cr-control-register" title="Link to this heading"></a></h2>
+<p>The <strong>CR</strong> (Control Register) controls clock sources and oscillators. The following are the possible clock sources:</p>
+<ul class="simple">
+<li><p><strong>HSI</strong> (High-Speed Internal): Internal RC oscillator, 16 MHz</p></li>
+<li><p><strong>HSE</strong> (High-Speed External): External crystal oscillator, 4–26 MHz</p></li>
+<li><p><strong>LSI</strong> (Low-Speed Internal): Internal 32 kHz RC oscillator</p></li>
+<li><p><strong>LSE</strong> (Low-Speed External): External 32 kHz crystal used for RTC (Real-Time Clock)</p></li>
+</ul>
+<p>Some of the important bits in the CR register are:</p>
+<ul class="simple">
+<li><p><strong>HSEBYP</strong>: bit that enables bypassing the HSE crystal oscillator with an external clock</p></li>
+<li><p><strong>HSEON</strong>: bit that enables the HSE clock</p></li>
+<li><p><strong>HSERDY</strong>: status bit that indicates whether the HSE clock is ready</p></li>
+</ul>
 </section>
-<section id="clock-initialization">
-<h2><span class="section-number">4.1.1.2.2. </span>Clock Initialization<a class="headerlink" href="#clock-initialization" title="Link to this heading"></a></h2>
-<p>The needs are met by selecting the clock sources, voltage scaling, flash memory wait states, and adjusting the PLL parameters.</p>
+<section id="apb1enr-apb1-peripheral-clock-enable-register">
+<h2><span class="section-number">4.1.9.2.2. </span>APB1ENR (APB1 Peripheral Clock Enable Register)<a class="headerlink" href="#apb1enr-apb1-peripheral-clock-enable-register" title="Link to this heading"></a></h2>
+<p>This register enables or disables the clock for peripherals connected to the APB1 bus.</p>
+<p><strong>PWREN</strong> is a bit in APB1ENR that enables or disables the clock of the power control module (power interface).</p>
 </section>
-<section id="configuration">
-<h2><span class="section-number">4.1.1.2.3. </span>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
-<p>The STM32 gives registers that let us control every detail of the clock system. Specific bits are set or cleared in these registers to choose the clock source, and frequency.
-RCC register manages reset and clock control.</p>
+<section id="pll-phase-locked-loop">
+<h2><span class="section-number">4.1.9.2.3. </span>PLL (Phase-Locked Loop)<a class="headerlink" href="#pll-phase-locked-loop" title="Link to this heading"></a></h2>
+<p><strong>PLL</strong> (Phase-Locked Loop) is a system that increases the frequency of the input clock signal.
+<strong>PLLCFGR</strong> (PLL Configuration Register) configures the PLL by adjusting dividers and multipliers. A typical frequency of the output clock signal is 100 MHz.
+<strong>VCO</strong> (Voltage-Controlled Oscillator) is part of the PLL system.
+<strong>PLLM</strong> is the main divider of the input clock.
+<strong>PLLN</strong> is the multiplier for the VCO output.
+<strong>PLLP</strong> is the divider for the PLL output.
+<strong>PLLQ</strong> and <strong>PLLI2S</strong> are dividers used for USB and I2S configurations, respectively.</p>
+<ul class="simple">
+<li><p><strong>RCC_PLLCFGR_PLLM</strong> is a bit mask for PLLM.</p></li>
+<li><p><strong>RCC_PLLCFGR_PLLM_Pos</strong> is the bit position for PLLM within the <strong>RCC_PLLCFGR</strong> register.</p></li>
+<li><p>VCO clock = PLL input clock × (PLLN / PLLM)</p></li>
+<li><p>PLL output clock = VCO clock / PLLP</p></li>
+</ul>
 </section>
-<section id="clock-source-selection">
-<h2><span class="section-number">4.1.1.2.4. </span>Clock Source Selection<a class="headerlink" href="#clock-source-selection" title="Link to this heading"></a></h2>
-<p>There are multiple options: HSI, HSE, LSI, LSE, and we choose one depending on whether we need accuracy or simplicity.</p>
+<section id="pwr-power-control">
+<h2><span class="section-number">4.1.9.2.4. </span>PWR (Power Control)<a class="headerlink" href="#pwr-power-control" title="Link to this heading"></a></h2>
+<p><strong>PWR</strong> (Power Control) is a peripheral that manages the power consumption of the microcontroller.
+Within PWR, there is the <strong>PWR_CR</strong> register (Power Control Register), and within it, there is the <strong>VOS</strong> (Voltage Scaling) field, which regulates power consumption and performance through voltage control.</p>
 </section>
-<section id="voltage-scaling">
-<h2><span class="section-number">4.1.1.2.5. </span>Voltage Scaling<a class="headerlink" href="#voltage-scaling" title="Link to this heading"></a></h2>
-<p>Higher frequencies need higher core voltage. STM32 allows voltage scaling to save power at lower frequencies and to safely run at higher speeds when needed.</p>
+<section id="flash-acr">
+<h2><span class="section-number">4.1.9.2.5. </span>FLASH_ACR<a class="headerlink" href="#flash-acr" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>FLASH_ACR</strong> is a register within the STM32 microcontroller responsible for managing flash memory.</p></li>
+<li><p><strong>FLASH_ACR_LATENCY</strong> is a field in <cite>FLASH_ACR</cite> (bits 0 to 3) that configures flash memory wait states.</p></li>
+</ul>
 </section>
-<section id="flash-memory-wait-states">
-<h2><span class="section-number">4.1.1.2.6. </span>Flash memory wait states<a class="headerlink" href="#flash-memory-wait-states" title="Link to this heading"></a></h2>
-<p>The flash memory (where the program is stored) is slower, so the wait states are needed. By setting those delays, flash memory has enough time to keep up.
-The faster the clock, the more wait states are needed.</p>
-</section>
-<section id="pll">
-<h2><span class="section-number">4.1.1.2.7. </span>PLL<a class="headerlink" href="#pll" title="Link to this heading"></a></h2>
-<p>PLL (Phase-Locked Loop) configuration is like a gear system, the input and output “gears” are set to get the wanted clock speed. PLL helps take a slower, steady clock and turn it into a faster one that the microcontroller can use.</p>
+<section id="importance-of-clock-initialization">
+<h2><span class="section-number">4.1.9.2.6. </span>Importance of Clock Initialization<a class="headerlink" href="#importance-of-clock-initialization" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Accuracy</p></li>
+<li><p>Optimal performance</p></li>
+<li><p>Power efficiency</p></li>
+</ul>
 </section>
 </section>
 
@@ -153,8 +187,8 @@ The faster the clock, the more wait states are needed.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="gpio.html" class="btn btn-neutral float-left" title="4.1.1.1. GPIO SUMMARY" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="usart.html" class="btn btn-neutral float-right" title="4.1.1.3. USART SUMMARY" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GPIO.html" class="btn btn-neutral float-left" title="4.1.9.1. Lesson 1: GPIO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="USART.html" class="btn btn-neutral float-right" title="4.1.9.3. Lesson 3: USART" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
