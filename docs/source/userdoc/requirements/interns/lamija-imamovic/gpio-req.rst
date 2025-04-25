@@ -28,7 +28,7 @@ GPIO requirements by Lamija Imamovic
    :references: 4.1.6.2 - L2 - GPIO
    :verification-and-validation: 
    
-   The system shall support setting GPIO output pins to high or low logical levels programmatically.
+   The system shall allow software to set a general-purpose output pin to a logical high level or a logical low level through the output data register.
 
 .. req:: GPIO Input Read
    :id: REQ_INT3_1744882709
@@ -70,5 +70,5 @@ GPIO requirements by Lamija Imamovic
    :references: 4.1.6.2 - L2 - GPIO
    :verification-and-validation: 
 
-   The system shall allow configuration of GPIO output type (push-pull or open-drain) and output speed (low, medium, high, very high) using dedicated control registers.
+   The system shall allow configuration of the general-purpose output type as either push-pull or open-drain. It shall also support setting the output speed to one of four levels: low speed, medium speed, high speed, or very high speed using dedicated control registers.
 

@@ -69,6 +69,20 @@ USART requirements by Lamija Imamovic
    :safety-asil: 
    :references: 4.1.6.3 - L3 - USART
    :verification-and-validation: 
+   
+   The system shall allow assigning general-purpose input and output pins to USART transmit and receive functions using the alternate function mode, depending on the selected USART peripheral.
 
-   The system shall allow assigning GPIO pins to USART transmit and receive functions using alternate function mode (e.g., AF7), depending on the selected USART peripheral.
+.. req:: USART Alternate Function Mapping Information
+   :id: REQ_INT3_1745568430
+   :status: Draft
+   :date-released: 25.4.2025
+   :priority: Low
+   :submitted-by: `Lamija Imamovic'
+   :modified-by:
+   :category: Functional
+   :safety-asil: 
+   :references: 4.1.6.3 - L3 - USART
+   :verification-and-validation: 
+  
+   The documentation shall provide a list of alternate function numbers assigned to each GPIO pin for each available USART peripheral.
   
