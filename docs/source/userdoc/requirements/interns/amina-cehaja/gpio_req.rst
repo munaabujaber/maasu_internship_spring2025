@@ -13,7 +13,7 @@ GPIO Requirement
    :references: STM32F411xCE Reference Manual, Section 8
    :verification-and-validation: Hardware test
 
-   The system shall configure GPIO pins as input, output, analog, or alternate function according to the task requirements.
+   The system shall configure GPIO functionality by accessing the MODER, IDR, ODR, PUPDR, and AFR registers depending on whether the pin is set for input mode, output mode, pull-up or pull-down configuration, or alternate function usage.
 
 .. req:: Configure GPIO through registers
    :id: REQ_INT3_1744889474
@@ -29,7 +29,7 @@ GPIO Requirement
 
    The system shall cofigure GPIO functionality by accessing the appropriate GPIO registers based on the intended pin behavior.
 
-.. req:: Set GPIO pull-up or pull/down resistors
+.. req:: Set GPIO pull-up or pull-down configuration
    :id: REQ_INT3_1744889831
    :status: Draft
    :date-released:
@@ -41,7 +41,8 @@ GPIO Requirement
    :references: STM32F411xCE Data Sheet
    :verification-and-validation: Measurement with oscilloscope
 
-   The GPIO configuration shall include setting needed pull-up or pull-down resistors.
+   The system shall configure internal pull-up or pull-down resistors for GPIO pins by setting the corresponding bits in the PUPDR register.
+   
 
 .. req:: Enable GPIO clock via RCC
    :id: REQ_INT3_1744890313

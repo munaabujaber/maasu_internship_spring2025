@@ -27,7 +27,7 @@ USART Requirement
    :references: STM32F411xCE Reference Manual, USART, Section 19
    :verification-and-validation: Communication test with PC via USB-to-Serial
 
-   The sytem shall enable both TX (Transmission) and RX (Reception) functionalities.
+   The system shall enable both the transmission functionality referred to as TX and the Reception functionality referred to as RX of the USART peripheral.
 
 .. req:: Set USART baud rate
    :id: REQ_INT3_1744892676
@@ -41,4 +41,4 @@ USART Requirement
    :references: STM32F411xCE Reference Manual, USART, Section 19
    :verification-and-validation: Code review
 
-   The system shall configure the USART baud rate to the desired value by setting the appropriate bits in USART_BRR based on the selected baud rate.
+   The system shall configure the USART baud rate by calculating and setting the division factor in the USART_BRR register, ensuring accurate communication speed according to the selected baud rate.
