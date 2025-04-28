@@ -34,7 +34,7 @@ Power Efficiency: Effective clock configuration can reduce power usage, especial
 
 Proper clock initialization establishes a reliable foundation for effective microcontroller operation.
 
-====================================
+---------------------
 
 Reset and Clock Control(RCC)
 -3 types of reset:system reset,power reset and backup domain reset.
