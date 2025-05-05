@@ -7,8 +7,5 @@ Requirements by Muhamed Sjekirica
    :caption: Muhamed Sjekirica Requirements
 
    initial
-   GPIO_Requirements
-   CLOCK_Requirements
-   USART_Requirements
 
    
