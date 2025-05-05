@@ -14,7 +14,6 @@ Muhamed Sjekirica Requirements
    :references: 
    :verification-and-validation: 
 
-   description
 
 
 
