@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5.1.9.3. Clock Requirements &mdash; Maasu Internship 4 1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-data-viewer/jsonview.bundle.css?v=f6ef2277" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/libs/html/datatables.min.css?v=4b4fd840" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/common.css?v=bd9ab754" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/layouts.css?v=448c382f" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/styles.css?v=6c8eb985" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-needs/modern.css?v=ffa536d2" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=29a6c3e3"></script>
+        <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../../_static/sphinx-data-viewer/jsonview.bundle.js?v=18cd53c5"></script>
+        <script src="../../../../_static/sphinx-data-viewer/jsonview_loader.js?v=f7ff7e7d"></script>
+        <script src="../../../../_static/sphinx-needs/libs/html/datatables.min.js?v=8a4aee21"></script>
+        <script src="../../../../_static/sphinx-needs/libs/html/datatables_loader.js?v=a2cae175"></script>
+        <script src="../../../../_static/sphinx-needs/libs/html/sphinx_needs_collapse.js?v=f783d6a5"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="5.1.9.4. USART Requirements" href="REQ_USART.html" />
+    <link rel="prev" title="5.1.9.2. GPIO Requirements" href="REQ_GPIO.html" />
+<link href="../../../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Maasu Internship 4
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../introduction/introduction.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../fundamentals/fundamentals.html">2. Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../environment_setup/environment_setup.html">3. Development Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lessons/lessons.html">4. Lessons</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../requirements.html">5. Requirements</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../requirements.html">5.1. Requirements written by each intern</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../amina-cehaja/requirements.html">5.1.1. Requirements by Amina Cehaja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../asja-resic/requirements.html">5.1.2. Requirements by Asja Resic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dzenana-selimovic/requirements.html">5.1.3. Requirements by Dzenana Selimovic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ibro-rebronja/requirements.html">5.1.4. Requirements by Ibro Rebronja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lamija-colakovic/requirements.html">5.1.5. Requirements by Lamija Colakovic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../lamija-imamovic/requirements.html">5.1.6. Requirements by Lamija Imamovic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mirza-bajramovic/requirements.html">5.1.7. Requirements by Mirza Bajramovic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../muhamed-sjekirica/requirements.html">5.1.8. Requirements by Muhamed Sjekirica</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="requirements.html">5.1.9. Requirements by Samir Dosljak</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="initial.html">5.1.9.1. Initial Requirement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="REQ_GPIO.html">5.1.9.2. GPIO Requirements</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">5.1.9.3. Clock Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="REQ_USART.html">5.1.9.4. USART Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs/faqs.html">6. Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../resources/resources.html">8. Resources</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Maasu Internship 4</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../requirements.html"><span class="section-number">5. </span>Requirements</a></li>
+          <li class="breadcrumb-item"><a href="../requirements.html"><span class="section-number">5.1. </span>Requirements written by each intern</a></li>
+          <li class="breadcrumb-item"><a href="requirements.html"><span class="section-number">5.1.9. </span>Requirements by Samir Dosljak</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5.1.9.3. </span>Clock Requirements</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/userdoc/requirements/interns/samir-dosljak/REQ_clock.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="clock-requirements">
+<h1><span class="section-number">5.1.9.3. </span>Clock Requirements<a class="headerlink" href="#clock-requirements" title="Link to this heading"></a></h1>
+<div class="need_container docutils container" id="SNCB-7a67ee92">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745498138">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">RCC_CR Register</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745498138" title="REQ_INT3_1745498138">REQ_INT3_1745498138</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: Thr RCC (Reset and Clock Control) is a peripheral within the STM32 that manages reset and clock control. CR(Control Register) is register within RCC that configures the clock sources and oscilators. The following are the possible clock sources</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>HSI</strong> (High-Speed Internal): Internal RC oscillator, 16 MHz</p></li>
+<li><p><strong>HSE</strong> (High-Speed External): External crystal oscillator, 4–26 MHz</p></li>
+<li><p><strong>LSI</strong> (Low-Speed Internal): Internal 32 kHz RC oscillator</p></li>
+<li><p><strong>LSE</strong> (Low-Speed External): External 32 kHz crystal used for RTC (Real-Time Clock)</p></li>
+</ul>
+<div class="need_container docutils container" id="SNCB-d7ed1779">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745672967">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Clock Source Selection</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745672967" title="REQ_INT3_1745672967">REQ_INT3_1745672967</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1745498138 and RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: The system shall configure the clock source as HSI, HSE, LSI, or LSE.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-93d1173c">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745684260">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">APB1ENR Register</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745684260" title="REQ_INT3_1745684260">REQ_INT3_1745684260</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: APB1ENR (APB1 Peripheral Clock Enable Register) enables or disables the clock for peripherals connected to the APB1 bus.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-5948f246">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745684367">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Peripheral Clock Control (APB1)</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745684367" title="REQ_INT3_1745684367">REQ_INT3_1745684367</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1745684260 and RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: The system shall be able to enable or disable clock peripherals connected to the APB1 bus.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-4a4a0eb7">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745684547">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">**HSEBYP**</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745684547" title="REQ_INT3_1745684547">REQ_INT3_1745684547</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: HSEBYP is bit within CR register that enables bypassing the HSE crystal with an external clock.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-fe662376">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745684635">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">HSE Oscillator Bypass</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745684635" title="REQ_INT3_1745684635">REQ_INT3_1745684635</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1745684547 and RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: The system shall allow bypassing the HSE crystal oscillator with an external clock.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-cbee4ad5">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745684798">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">**HSERDY**</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745684798" title="REQ_INT3_1745684798">REQ_INT3_1745684798</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: HSERDY is status bit within CR register that indicates whether the HSE clock is ready.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-40bdf4be">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745685203">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">HSE Readiness Status</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745685203" title="REQ_INT3_1745685203">REQ_INT3_1745685203</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1745684798 and RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: The system shall allow reading the HSE oscillator ready status.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-720aa35e">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745685327">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">**PWREN**</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745685327" title="REQ_INT3_1745685327">REQ_INT3_1745685327</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: PWREN is bit within APB1ENR that enables or disables the clock of the power control module.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-049bc231">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745685341">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Power Control Clock Enable</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745685341" title="REQ_INT3_1745685341">REQ_INT3_1745685341</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1745685327 and RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: The system shall enable the clock for the power control module.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-f6e110fe">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745702213">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">**FLASH_ACR**</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745702213" title="REQ_INT3_1745702213">REQ_INT3_1745702213</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><dl class="simple">
+<dt>description:</dt><dd><ul class="simple">
+<li><p><strong>FLASH_ACR</strong> is a register within the STM32 microcontroller responsible for managing Flash memory.</p></li>
+<li><p><strong>FLASH_ACR_LATENCY</strong> is a field in <cite>FLASH_ACR</cite> (bits 0 to 3) that configures the number of wait states in order to correctly read data from Flash memory.</p></li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-1abc551d">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745702240">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">Flash Memory Configuration</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745702240" title="REQ_INT3_1745702240">REQ_INT3_1745702240</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1745702213 and RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: The system shall configure the number of Flash memory wait states.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-352f98e4">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745702465">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">**PLL** (Phase-Locked Loop)</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745702465" title="REQ_INT3_1745702465">REQ_INT3_1745702465</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Informational</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: <strong>PLL</strong> (Phase-Locked Loop) is a system that increases the frequency of the input clock signal.
+<strong>PLLCFGR</strong> (PLL Configuration Register) configures the PLL by adjusting dividers and multipliers. A typical frequency of the output clock signal is 100 MHz.
+<strong>VCO</strong> (Voltage-Controlled Oscillator) is part of the PLL system.
+<strong>PLLM</strong> is the main divider of the input clock.
+<strong>PLLN</strong> is the multiplier for the VCO output.
+<strong>PLLP</strong> is the divider for the PLL output.
+<strong>PLLQ</strong> and <strong>PLLI2S</strong> are dividers used for USB and I2S configurations, respectively.</p>
+<ul class="simple">
+<li><p><strong>RCC_PLLCFGR_PLLM</strong> is a bit mask for PLLM.</p></li>
+<li><p><strong>RCC_PLLCFGR_PLLM_Pos</strong> is the bit position for PLLM within the <strong>RCC_PLLCFGR</strong> register.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="need_container docutils container" id="SNCB-673ffcd5">
+<table class="need needs_grid_simple needs_layout_clean rtd-exclude-wy-table no-sphinx-material-strip needs_style_red_bar needs_type_req docutils align-default" id="REQ_INT3_1745702487">
+<tbody>
+<tr class="need head row-odd"><td class="need head"><div class="needs_head line-block">
+<div class="line"><span><span class="needs_type_name"><span class="needs_data">Requirement</span></span>: </span><strong><span><span class="needs_title"><span class="needs_data">PLL Configuration</span></span></span></strong><span> <span class="needs-id"><a class="reference internal" href="#REQ_INT3_1745702487" title="REQ_INT3_1745702487">REQ_INT3_1745702487</a></span>  <span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><span><img alt="../../../../_images/arrow-down-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-down-circle.svg" style="width: 17px;" /></span></span><span class="needs visible"><span><img alt="../../../../_images/arrow-right-circle.svg" class="sn_collapse_img no-scaled-link" src="../../../../_images/arrow-right-circle.svg" style="width: 17px;" /></span></span></span> </span></div>
+</div>
+</td>
+</tr>
+<tr class="need meta row-even"><td class="need meta"><div class="needs_meta line-block">
+<div class="line"><span><span><div class="line"><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">Draft</span></span></div>
+<div class="line"><span class="needs_style"><span class="needs_label">style: </span><span class="needs_data">red_bar</span></span></div>
+<div class="line"><span class="needs_category"><span class="needs_label">category: </span><span class="needs_data">Functional</span></span></div>
+<div class="line"><span class="needs_priority"><span class="needs_label">priority: </span><span class="needs_data">Low</span></span></div>
+<div class="line"><span class="needs_submitted-by"><span class="needs_label">submitted-by: </span><span class="needs_data">`Samir Dosljak &lt;https://github.com/sdosljak1&gt;`_</span></span></div>
+<div class="line"><span class="needs_date-released"><span class="needs_label">date-released: </span><span class="needs_data">24.04.2025.</span></span></div>
+<div class="line"><span class="needs_references"><span class="needs_label">references: </span><span class="needs_data">REQ_INT3_1745702465 and RM0383 Reference manual</span></span></div>
+</span></span></div>
+<div class="line"><span></span></div>
+</div>
+</td>
+</tr>
+<tr class="need content row-odd"><td class="need content" colspan="1"><p>description: The system shall allow configuring the PLL to achieve higher system clock frequencies when required.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="REQ_GPIO.html" class="btn btn-neutral float-left" title="5.1.9.2. GPIO Requirements" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="REQ_USART.html" class="btn btn-neutral float-right" title="5.1.9.4. USART Requirements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Maasu BH d.o.o..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
