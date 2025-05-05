@@ -7,3 +7,6 @@ Requirements by Samir Dosljak
    :caption: Contents:
 
    initial
+   REQ_GPIO
+   REQ_clock
+   REQ_USART
