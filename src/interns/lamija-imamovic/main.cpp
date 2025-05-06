@@ -1,5 +1,9 @@
 #include <stdint.h>
 #include "stm32f4xx.h"
+#include "clock.cpp"
+#include "gpio.cpp"
+#include "usart.cpp"
+
 
 // External declarations
 extern void clock_init();
