@@ -14,7 +14,7 @@ USART Requirements
    :references: 
    :verification-and-validation: 
 
-   The USART module allows initialization with clear information on who is master and who is slave.
+   The system shall support initialization of the USART module with configuration options that clearly define master and slave roles, where applicable.
 
 .. req:: USART transmit
    :id: REQ_INT3_1745295467
@@ -28,7 +28,7 @@ USART Requirements
    :references: 
    :verification-and-validation: 
 
-    The system is able to transmit data via USART.
+   The system shall support transmission of data via the USART interface.
 
 .. req:: USART receive
    :id: REQ_INT3_1745295498
@@ -42,4 +42,4 @@ USART Requirements
    :references: 
    :verification-and-validation: 
 
-   The system is able to receive data via USART in blocking or interrupt-driven mode.
+   The system shall support reception of data via the USART interface using both blocking and interrupt-driven modes.

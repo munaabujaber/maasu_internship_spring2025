@@ -14,7 +14,7 @@ Clock Requirements
    :references: 
    :verification-and-validation: 
 
-    The system makes selection between internal and external clock sources available.
+   The system shall provide a mechanism to select between internal and external clock sources at runtime or during initialization.
 
 
 .. req:: Clock frequency configuration
@@ -29,7 +29,7 @@ Clock Requirements
    :references: 
    :verification-and-validation: 
 
-   The system allows configuration of the core clock frequency.
+   The system shall allow the configuration of the core clock frequency within a defined range of supported values.
 
 
 .. req:: PLL configuration
@@ -44,7 +44,9 @@ Clock Requirements
    :references: 
    :verification-and-validation: 
 
-    The system allows configuration of the PLL.
+   The system shall support configuration of the Phase-Locked Loop (PLL) settings, including input source, multiplication factor, and output dividers.
+
+
 
 
 .. req:: Clock failover support
@@ -59,7 +61,9 @@ Clock Requirements
    :references: 
    :verification-and-validation: 
 
-    The system switches to a backup clock source if the primary clock fails.
+   The system shall automatically switch to a predefined backup clock source in the event of a primary clock failure, without requiring a system reset.
+
+
 
 
 

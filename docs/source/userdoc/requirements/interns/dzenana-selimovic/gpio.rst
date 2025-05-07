@@ -14,7 +14,7 @@ GPIO Requirements
    :references: 
    :verification-and-validation: 
 
-    The system initializes GPIO pins according to user configuration as input or output.
+   The system shall support initialization of each GPIO pin based on user configuration as either input or output.
 
 .. req:: GPIO output level control
    :id: REQ_INT3_1745295187
@@ -28,7 +28,7 @@ GPIO Requirements
    :references: 
    :verification-and-validation: 
 
-   The system allows setting the output state of each GPIO pin configured as output to HIGH or LOW.
+   The system shall allow setting the logical output level of each GPIO pin configured as output to either HIGH or LOW.
 
 .. req:: GPIO interrupt support
    :id: REQ_INT3_1745295224
@@ -42,4 +42,4 @@ GPIO Requirements
    :references: 
    :verification-and-validation: 
 
-   The system has GPIO interrupt triggering on rising edge, falling edge or both.
+   The system shall support interrupt triggering on GPIO pins based on rising edge, falling edge, or both edges.
