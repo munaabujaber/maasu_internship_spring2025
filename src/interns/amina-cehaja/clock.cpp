@@ -1,28 +1,24 @@
-// clock.cpp
+#include "clock.hpp"
 
-#include "stm32f4xx.h"
-
-// Initialize system clock using HSE and PLL configuration
-void clock_init()
-{
-    // Enable HSE and wait until ready
+void Clock::init() {
+    // Enable HSE and wait until it's ready
     RCC->CR |= RCC_CR_HSEON;
     while (!(RCC->CR & RCC_CR_HSERDY));
 
-    // Enable power interface clock and set regulator voltage
+    // Enable power interface clock and set voltage regulator scale
     RCC->APB1ENR |= RCC_APB1ENR_PWREN;
     PWR->CR |= PWR_CR_VOS;
 
-    // Set flash latency to 3 wait states
+    // Configure Flash latency
     FLASH->ACR |= FLASH_ACR_LATENCY_3WS;
 
-    // Configure PLL (HSE = 25 MHz, PLLN = 200, PLLP = 2)
+    // Configure PLL (25 MHz HSE -> 100 MHz SYSCLK)
     RCC->PLLCFGR = (25 << RCC_PLLCFGR_PLLM_Pos) |
                    (200 << RCC_PLLCFGR_PLLN_Pos) |
-                   (0 << RCC_PLLCFGR_PLLP_Pos) |
+                   (0 << RCC_PLLCFGR_PLLP_Pos) |  // PLLP = 2
                    RCC_PLLCFGR_PLLSRC_HSE;
 
-    // Set APB1 prescaler to divide by 2
+    // Set APB1 prescaler to divide by 2 (max 50 MHz)
     RCC->CFGR |= RCC_CFGR_PPRE1_DIV2;
 
     // Enable PLL and wait until ready
