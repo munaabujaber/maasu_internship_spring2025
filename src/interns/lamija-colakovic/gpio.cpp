@@ -5,25 +5,20 @@ void gpio_init(GPIO_TypeDef* port, uint8_t pin, GPIOMode mode,
     GPIOOutputType type,
     GPIOPull pull,
     GPIOSpeed speed) {
-    // Enable clock
+    
     if (port == GPIOA) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
     else if (port == GPIOB) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
     else if (port == GPIOC) RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
-    // Add more as needed...
-
-    // MODER (mode register)
+    
     port->MODER &= ~(0b11 << (pin * 2));
     port->MODER |= (static_cast<uint32_t>(mode) << (pin * 2));
 
-    // OTYPER (output type)
     port->OTYPER &= ~(1 << pin);
     port->OTYPER |= (static_cast<uint32_t>(type) << pin);
 
-    // PUPDR (pull-up/pull-down)
     port->PUPDR &= ~(0b11 << (pin * 2));
     port->PUPDR |= (static_cast<uint32_t>(pull) << (pin * 2));
 
-    // OSPEEDR (output speed)
     port->OSPEEDR &= ~(0b11 << (pin * 2));
     port->OSPEEDR |= (static_cast<uint32_t>(speed) << (pin * 2));
 }

@@ -34,7 +34,6 @@ void gpio_init(GPIO_TypeDef* port, uint8_t pin, GPIOMode mode,
     GPIOPull pull = GPIOPull::NoPull,
     GPIOSpeed speed = GPIOSpeed::Low);
 
-
 void gpio_set_alt_func(GPIO_TypeDef* port, uint8_t pin, uint8_t af);
 void gpio_write(GPIO_TypeDef* port, uint8_t pin, bool value);
 void gpio_toggle(GPIO_TypeDef* port, uint8_t pin);
