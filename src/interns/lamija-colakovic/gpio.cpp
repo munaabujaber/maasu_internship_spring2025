@@ -1,5 +1,6 @@
 #include "gpio.hpp"
 #include "stm32f4xx.h"
+#include <stdint.h> 
 
 void gpio_init(GPIO_TypeDef* port, uint8_t pin, GPIOMode mode,
     GPIOOutputType type,
@@ -32,9 +33,9 @@ void gpio_set_alt_func(GPIO_TypeDef* port, uint8_t pin, uint8_t af) {
 
 void gpio_write(GPIO_TypeDef* port, uint8_t pin, bool value) {
     if (value)
-        port->BSRR = (1 << pin);   // Set
+        port->BSRR = (1 << pin);  
     else
-        port->BSRR = (1 << (pin + 16)); // Reset
+        port->BSRR = (1 << (pin + 16)); 
 }
 
 void gpio_toggle(GPIO_TypeDef* port, uint8_t pin) {
