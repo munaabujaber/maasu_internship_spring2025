@@ -49,6 +49,7 @@ void gpio_write_pin(GPIOPort selected_port, uint8_t pin, uint8_t value);
 void gpio_set_alternate_function(GPIOPort selected_port, uint8_t pin, uint8_t af);
 void gpio_set_pin(GPIOPort selected_port, uint8_t pin);
 void gpio_reset_pin(GPIOPort selected_port, uint8_t pin);
+void gpio_toggle_pin(GPIOPort selected_port, uint8_t pin);
 
 void gpio_init(GPIOPort selected_port, uint8_t pin,
     GPIOMode mode,

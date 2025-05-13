@@ -1,19 +1,22 @@
 #include "clock.h"
+
+#define STM32F411xE
 #include "stm32f4xx.h"
 
 //clock variables
 static uint32_t APB1Clock = 25000000;
 static uint32_t APB2Clock = 25000000;
+static uint32_t system_core_clock=0;
 
 static void enable_hse() {
     RCC->CR |= RCC_CR_HSEON;
     while (!(RCC->CR & RCC_CR_HSERDY));
 }
 
-static void configure_voltage() {
-    RCC->APB1ENR |= RCC_APB1ENR_PWREN;
-    PWR->CR &= ~PWR_CR_VOS;
-    PWR->CR |= (0b11 << PWR_CR_VOS_Pos);
+static void configure_voltage(VoltageScale scale) {
+    RCC->APB1ENR |= RCC_APB1ENR_PWREN;            
+    PWR->CR &= ~PWR_CR_VOS;                      
+    PWR->CR |= (scale << PWR_CR_VOS_Pos);         // Set new VOS value
 }
 
 static void set_flash_latency(uint32_t latency) {
@@ -48,28 +51,38 @@ static void switch_sysclk_to_pll() {
 
 void clock_init(uint8_t pllm, uint16_t plln, uint8_t pllp,
                 AHBPrescaler ahb_prescaler, APBPrescaler apb1_prescaler,
-                APBPrescaler apb2_prescaler, uint32_t flash_latency) {
+                APBPrescaler apb2_prescaler, uint32_t flash_latency, VoltageScale scale) {
 
     enable_hse();
-    configure_voltage();
+    configure_voltage(scale);
     set_flash_latency(flash_latency);
     configure_pll(pllm, plln, pllp);
     set_prescalers(ahb_prescaler, apb1_prescaler, apb2_prescaler);
     switch_sysclk_to_pll();
-
+                    
     // Update system frequencies
     uint32_t hse_value = 25000000;  // External crystal = 25 MHz
     uint32_t vco = (hse_value / pllm) * plln;
-    uint32_t pllp_div_factor = 2 * (pllp + 1);  // value which we will be dividing with (2,4,6,8)
-    SystemCoreClock = vco / pllp_div_factor;
+                    
+    uint32_t pllp_div_factor;
+    switch (pllp) {
+        case PLLP_DIV_2: pllp_div_factor = 2; break;
+        case PLLP_DIV_4: pllp_div_factor = 4; break;
+        case PLLP_DIV_6: pllp_div_factor = 6; break;
+        case PLLP_DIV_8: pllp_div_factor = 8; break;
+        default: pllp_div_factor = 2; break; 
+    }
+
+    system_core_clock = vco / pllp_div_factor;
+
     
-    // we shift it if needed (if not 1)
-    uint32_t apb1_div = (apb1_prescaler == APB_DIV_1) ? 1 : (1 << ((apb1_prescaler & 0b111) - 3)); 
-    uint32_t apb2_div = (apb2_prescaler == APB_DIV_1) ? 1 : (1 << ((apb2_prescaler & 0b111) - 3));
+    // calculate it if needed (if not 1)
+    uint32_t apb1_div = (apb1_prescaler == APB_DIV_1) ? 1 : (1 << (apb1_prescaler - 3)); 
+    uint32_t apb2_div = (apb2_prescaler == APB_DIV_1) ? 1 : (1 << (apb2_prescaler - 3));
     
 
-    APB1Clock = SystemCoreClock / apb1_div;
-    APB2Clock = SystemCoreClock / apb2_div;
+    APB1Clock = system_core_clock / apb1_div;
+    APB2Clock = system_core_clock / apb2_div;
 }
 
 uint32_t get_apb1_clock() {
@@ -79,3 +92,7 @@ uint32_t get_apb1_clock() {
 uint32_t get_apb2_clock() {
     return APB2Clock;
 }
+uint32_t get_core_clock() {
+    return system_core_clock;
+}
+

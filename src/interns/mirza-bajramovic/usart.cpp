@@ -1,4 +1,6 @@
 #include "usart.h"
+#include "clock.h"
+#define STM32F411xE
 #include "stm32f4xx.h"
 
 
@@ -15,9 +17,16 @@ static void enable_usart_clock(USART_TypeDef* usart) {
 void usart_init(
     USART_TypeDef* usart,
     uint32_t baud_rate,
-    uint32_t bus_clock,
     OversamplingMode over8
 ) {
+
+    uint32_t bus_clock;
+
+    if (usart == USART1 || usart == USART6)
+        bus_clock = get_apb2_clock();
+    else
+        bus_clock = get_apb1_clock();
+        
     enable_usart_clock(usart);
 
     // Disable USART before configuring
@@ -31,12 +40,12 @@ void usart_init(
     }
 
     // Calculate USARTDIV and set baud rate
-    double usartdiv;
+    float usartdiv;
 
     if (over8 == OVER8_8) {
-        usartdiv = (double)bus_clock / (8 * baud_rate);
+        usartdiv = (float)bus_clock / (8 * baud_rate);
     } else {
-        usartdiv = (double)bus_clock / (16 * baud_rate);
+        usartdiv = (float)bus_clock / (16 * baud_rate);
     }
 
     uint32_t mantissa = (uint32_t)usartdiv;

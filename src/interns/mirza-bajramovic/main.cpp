@@ -1,10 +1,42 @@
 #include <stdint.h>
+#include <stdio.h>
 #include "clock.h"
 #include "gpio.h"
 #include "usart.h"
+
+#define STM32F411xE
 #include "stm32f4xx.h"
 
+
+uint32_t ticks{};
+
+void systick_handler()
+{
+    ticks++;
+}
+
+void delay_ms(const uint32_t &ms)
+{
+    uint32_t start = ticks;
+    uint32_t end = start + ms;
+
+    // Check overflow
+    if (end < start)
+        while (ticks > start);
+
+    // Wait for ticks to wrap around to zero
+    while (ticks < end);
+}
+
 int main() {
+     // Config systick at 1khz = 1ms, our HSI (high speed internal oscillator = 8mhz/8khz = 1khz)
+     SysTick_Config(get_core_clock() / 1000);  // 1ms tick
+     // Enable interupts
+     __enable_irq();
+ 
+    // Init pin here (instantiate gpio object with needed GPIO port and pin)
+    // We will be using the same port and pin as an example: GPIOA and pin 5
+    // Set mode
     // Initialize system clock to 100 MHz (using 25 MHz external crystal)
     clock_init(
         25,       // PLLM
@@ -13,7 +45,8 @@ int main() {
         AHB_DIV_1,
         APB_DIV_2,
         APB_DIV_1,
-        FLASH_ACR_LATENCY_3WS
+        FLASH_ACR_LATENCY_3WS,
+        SCALE_1
     );
 
     // Enable GPIOA clock
@@ -27,8 +60,7 @@ int main() {
     gpio_init(PORTA, 3, ALT, PUSH_PULL, HIGH_SPEED, NO_PULL, 7);
 
     // Initialize USART2 (on APB1) with baud rate 9600, 16x oversampling
-    // get_apb1_clock() is calculated APB1 clock from clock_init
-    usart_init(USART2,9600,get_apb1_clock(),OVER8_16);
+    usart_init(USART2,9600,OVER8_16);
 
     //Send startup message
     usart_write(USART2, 'S');
@@ -39,14 +71,12 @@ int main() {
     usart_write(USART2, '\n');
 
     while (1) {
-        // Toggle PA5 (LED)
-        GPIOA->ODR ^= (1 << 5);
+        
+        gpio_toggle_pin(PORTA, 5); // Toggle PA5 (LED)
+       
+        usart_write(USART2, '.');  // Send a dot over USART2
 
-        // Send a dot over USART2
-        usart_write(USART2, '.');
-
-        //delay loop 
-        for (volatile int i = 0; i < 100000; i++);
+        delay_ms(500);
     }
 
     return 0;

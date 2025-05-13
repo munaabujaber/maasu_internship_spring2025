@@ -10,14 +10,14 @@
 
 void gpio_mode(GPIOPort selected_port, GPIOMode mode, uint8_t pin){
 
-    //Kreiramo pokazivac port
+    //Creating a pointer named port 
     GPIO_TypeDef* port = (GPIO_TypeDef*) selected_port;
 
-    //clearing, 2 bita po pinu
+    //clearing, 2 bits
     port->MODER &= ~(0b11 << (pin*2));
 
-    //postavljanje moda,
-    //2 bita po pinu (npr moder10 -> pin=10, bits: 20,21
+    //seting the mode
+    //2 bits per pin ( moder10 -> pin=10, bits: 20,21)
     port->MODER |=  (mode << (pin*2));
 
 }
@@ -37,13 +37,8 @@ void gpio_output_type(GPIOPort selected_port, GPIOOutputType output_type, uint8_
 
 void gpio_output_speed(GPIOPort selected_port, OutputSpeed speed, uint8_t pin) {
         
-    //Kreiranje pokazivaca port
     GPIO_TypeDef* port = (GPIO_TypeDef*) selected_port;
-
-    //clearing, 2 bita po pinu
     port->OSPEEDR &= ~(0b11 << (pin * 2));
-
-    // Postavljanje brzine
     port->OSPEEDR |= (speed << (pin * 2));
 }
 
@@ -60,7 +55,7 @@ uint8_t gpio_read_pin(GPIOPort selected_port, uint8_t pin) {
     GPIO_TypeDef* port = (GPIO_TypeDef*) selected_port;
 
     // Read the IDR, check if the bit is set 
-    return (port->IDR & (1 << pin)) ? 1 : 0; //1 za high, 0 za low
+    return (port->IDR & (1 << pin)) ? 1 : 0; //1 for high, 0 for low
 }
 
 void gpio_write_pin(GPIOPort selected_port, uint8_t pin, uint8_t value) {
@@ -76,20 +71,17 @@ void gpio_write_pin(GPIOPort selected_port, uint8_t pin, uint8_t value) {
     }
 }
 void gpio_set_alternate_function(GPIOPort selected_port, uint8_t pin, uint8_t af) {
-    if (pin > 15) {
-        //exception, log error or somethihg.
-        return;
-    }
+   
 
     GPIO_TypeDef* port = (GPIO_TypeDef*) selected_port;
 
     if (pin < 8) {
-        // AFRL pins 0–7, po 4 bita
-        port->AFR[0] &= ~(0xF << (pin * 4));  // clearamo
+        // AFRL pins 0–7, 4 bits
+        port->AFR[0] &= ~(0xF << (pin * 4));  // clear
         port->AFR[0] |= (af << (pin * 4)); // set
     } else {
-        // Use AFRH pins 8–15, po 4 bita
-        port->AFR[1] &= ~(0xF << ((pin - 8) * 4));       // clearamo
+        // Use AFRH pins 8–15, 4 bits
+        port->AFR[1] &= ~(0xF << ((pin - 8) * 4));  // clear
         port->AFR[1] |= (af << ((pin - 8) * 4)); // set
     }
 }
@@ -102,7 +94,7 @@ void gpio_set_pin(GPIOPort selected_port, uint8_t pin) {
 
 void gpio_reset_pin(GPIOPort selected_port, uint8_t pin) {
     GPIO_TypeDef* port = (GPIO_TypeDef*) selected_port;
-    port->BSRR = (1 << (pin + 16)); // plus 16 zbog upper half, reset pin atomically
+    port->BSRR = (1 << (pin + 16)); // plus 16 bc of upper half, reset pin atomically
 }
 
 void gpio_init(GPIOPort selected_port, uint8_t pin,
@@ -120,6 +112,11 @@ void gpio_init(GPIOPort selected_port, uint8_t pin,
     if (mode == ALT)    gpio_set_alternate_function(selected_port, pin, alternate_function);
 
 }
+void gpio_toggle_pin(GPIOPort selected_port, uint8_t pin) {
+    GPIO_TypeDef* port = (GPIO_TypeDef*) selected_port;
+    port->ODR ^= (1 << pin);
+}
+
 
 
 
