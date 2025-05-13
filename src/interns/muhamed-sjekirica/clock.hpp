@@ -27,6 +27,7 @@ struct ClockConfig {
     uint32_t pll_p;
     FlashLatency flash_latency;
     VoltageScale voltage_scale;
+    bool hse_bypass = false; // Novo: omogućava HSE bypass mod
 };
 
 // Funkcije za inicijalizaciju

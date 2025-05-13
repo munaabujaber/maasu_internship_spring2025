@@ -80,3 +80,14 @@ void usart_write_byte(USARTPort port, uint8_t data) {
     // Čekaj dok se prenos u potpunosti ne završi (TC = transmission complete)
     while (!(usart->SR & USART_SR_TC));
 }
+
+// Funkcija za čitanje jednog bajta sa odabranog USART porta
+uint8_t usart_read_byte(USARTPort port) {
+    USART_TypeDef* usart = get_usart_instance(port);
+    if (!usart) return 0;  // Ako port nije validan, vraća 0
+
+    // Čekaj dok RXNE (receive data register not empty) ne postane 1
+    while (!(usart->SR & USART_SR_RXNE));
+
+    return static_cast<uint8_t>(usart->DR);  // Čitaj podatak sa data registera
+}

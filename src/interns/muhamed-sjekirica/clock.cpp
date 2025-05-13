@@ -31,6 +31,10 @@ void clock_init(const ClockConfig& config) {
     FLASH->ACR |= static_cast<uint32_t>(config.flash_latency);
 
     // Aktivacija HSE (High Speed External) oscilatora, koji se koristi za PLL
+    // Ako je odabran bypass mod, omogućavamo bypass
+    if (config.hse_bypass) {
+        RCC->CR |= RCC_CR_HSEBYP;  // Omogućava HSE bypass mod 
+    }
     RCC->CR |= RCC_CR_HSEON;
     // Čekanje da HSE oscilator postane stabilan
     while (!(RCC->CR & RCC_CR_HSERDY));
@@ -50,7 +54,7 @@ void clock_init(const ClockConfig& config) {
     // Prebacivanje sistema na PLL kao izvor takta
     RCC->CFGR |= RCC_CFGR_SW_PLL;
     // Čekanje da PLL postane aktivan izvor takta
-    while (!(RCC->CFGR & RCC_CFGR_SW_PLL));
+    while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
 
     // Postavljanje preddijelitelja za APB1 magistralu (div2 znači dijeljenje sa 2)
     RCC->CFGR |= RCC_CFGR_PPRE1_DIV2;
@@ -70,7 +74,8 @@ void clock_init_100MHz(void) {
     // Podešavanje Flash latencije na 3WS (3 čekanja)
     FLASH->ACR |= FLASH_ACR_LATENCY_3WS;
 
-    // Aktivacija HSE oscilatora
+    // Aktivacija HSE oscilatora u bypass modu (fiksirano za ovaj slučaj)
+    RCC->CR |= RCC_CR_HSEBYP;
     RCC->CR |= RCC_CR_HSEON;
     // Čekanje da HSE oscilator postane stabilan
     while (!(RCC->CR & RCC_CR_HSERDY));
@@ -79,6 +84,7 @@ void clock_init_100MHz(void) {
     RCC->PLLCFGR &= ~(RCC_PLLCFGR_PLLM | RCC_PLLCFGR_PLLN | RCC_PLLCFGR_PLLP);
     // Postavljamo PLLM na 25, PLLN na 200 (100 MHz izlaz), i PLLP na 2
     RCC->PLLCFGR |= ((25 << RCC_PLLCFGR_PLLM_Pos) | (200 << RCC_PLLCFGR_PLLN_Pos));
+    RCC->PLLCFGR |= (0 << RCC_PLLCFGR_PLLP_Pos); // PLLP = 2
 
     // Aktivacija PLL
     RCC->CR |= RCC_CR_PLLON;
@@ -88,8 +94,10 @@ void clock_init_100MHz(void) {
     // Prebacivanje sistema na PLL kao izvor takta
     RCC->CFGR |= RCC_CFGR_SW_PLL;
     // Čekanje da PLL postane aktivan izvor takta
-    while (!(RCC->CFGR & RCC_CFGR_SW_PLL));
+    while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL);
 
     // Postavljanje preddijelitelja za APB1 magistralu (div2 znači deljenje sa 2)
     RCC->CFGR |= RCC_CFGR_PPRE1_DIV2;
+    // Postavljanje preddijelitelja za APB2 magistralu (div1 znači bez dijeljenja)
+    RCC->CFGR |= RCC_CFGR_PPRE2_DIV1;
 }
