@@ -30,7 +30,7 @@ void delay_ms(const uint32_t &ms)
 
 int main() {
      // Config systick at 1khz = 1ms, our HSI (high speed internal oscillator = 8mhz/8khz = 1khz)
-     SysTick_Config(get_core_clock() / 1000);  // 1ms tick
+     // 1ms tick
      // Enable interupts
      __enable_irq();
  
@@ -40,8 +40,8 @@ int main() {
     // Initialize system clock to 100 MHz (using 25 MHz external crystal)
     clock_init(
         25,       // PLLM
-        200,      // PLLN
-        0,        // PLLP (÷2 → gives 100 MHz)
+        400,      // PLLN
+        PLLP_DIV_4,        // PLLP (÷2 → gives 100 MHz)
         AHB_DIV_1,
         APB_DIV_2,
         APB_DIV_1,
@@ -49,32 +49,40 @@ int main() {
         SCALE_1
     );
 
+    SysTick_Config(get_core_clock() / 1000);
+
     // Enable GPIOA clock
     RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
 
     // Configure PA5 (LED) as output, push-pull, high speed, no pull
-    gpio_init(PORTA, 5, OUTPUT, PUSH_PULL, HIGH_SPEED, NO_PULL, 0);
+    gpio_init(PORTC, 13, OUTPUT, PUSH_PULL, LOW_SPEED, NO_PULL, 0);
+    
 
-    // Configure PA2 (USART2 TX) and PA3 (USART2 RX) as alternate function AF7
-    gpio_init(PORTA, 2, ALT, PUSH_PULL, HIGH_SPEED, NO_PULL, 7);
-    gpio_init(PORTA, 3, ALT, PUSH_PULL, HIGH_SPEED, NO_PULL, 7);
+    //Configure PA2 (USART2 TX) and PA3 (USART2 RX) as alternate function AF7
+    gpio_init(PORTA, 2, ALT, PUSH_PULL, VERY_HIGH_SPEED, NO_PULL, 7);
+    gpio_init(PORTA, 3, ALT, PUSH_PULL, VERY_HIGH_SPEED, NO_PULL, 7);
 
-    // Initialize USART2 (on APB1) with baud rate 9600, 16x oversampling
+    
+    //Initialize USART2 (on APB1) with baud rate 9600, 16x oversampling
+    RCC->APB1ENR |= RCC_APB1ENR_USART2EN;
     usart_init(USART2,9600,OVER8_16);
-
+     
     //Send startup message
-    usart_write(USART2, 'S');
-    usart_write(USART2, 't');
-    usart_write(USART2, 'a');
-    usart_write(USART2, 'r');
-    usart_write(USART2, 't');
-    usart_write(USART2, '\n');
+    // usart_write(USART2, 'S');
+    // usart_write(USART2, 't');
+    // usart_write(USART2, 'a');
+    // usart_write(USART2, 'r');
+    // usart_write(USART2, 't');
+    // usart_write(USART2, '\n');
 
     while (1) {
         
-        gpio_toggle_pin(PORTA, 5); // Toggle PA5 (LED)
-       
-        usart_write(USART2, '.');  // Send a dot over USART2
+        gpio_toggle_pin(PORTC, 13); // Toggle PA5 (LED)
+        
+        usart_write(USART2, '.');
+        usart_write(USART2, '\n');
+
 
         delay_ms(500);
     }
