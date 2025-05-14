@@ -1,45 +1,51 @@
 #include <stdint.h>
+#include "clock.h"
+#include "gpio.h"
+#include "usart.h"
 #include "stm32f4xx.h"
-#include "clock.cpp"
-#include "gpio.cpp"
-#include "usart.cpp"
 
+int main() {
+    // Configure the system clock to 100 MHz using a 25 MHz external crystal
+    clock_init(
+        25,        // PLLM
+        200,       // PLLN
+        0,         // PLLP (÷2, gives 100 MHz)
+        AHB_DIV_1, // AHB prescaler
+        APB_DIV_2, // APB1 prescaler
+        APB_DIV_1, // APB2 prescaler
+        FLASH_ACR_LATENCY_3WS // Flash latency for 100 MHz
+    );
 
-// External declarations
-extern void clock_init();
-extern void gpio_init(GPIO_TypeDef* GPIOx, uint32_t pin, uint32_t mode);
-extern void gpio_toggle(GPIO_TypeDef* GPIOx, uint32_t pin);
-extern void usart_init(USART_TypeDef* USARTx, uint32_t baudrate, uint8_t oversampling);
-extern void usart_write_string(USART_TypeDef* USARTx, const char* str);
+    // Enable clock for GPIOA
+    RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
 
-volatile uint32_t ticks = 0;
+    // Initialize PA5 as output for LED (high speed, push-pull, no pull-up/down)
+    gpio_init(PORTA, 5, OUTPUT, PUSH_PULL, HIGH_SPEED, NO_PULL, 0);
 
-extern "C" void SysTick_Handler()
-{
-    ticks++;
-}
+    // Initialize PA2 as USART2_TX and PA3 as USART2_RX with AF7
+    gpio_init(PORTA, 2, ALT, PUSH_PULL, HIGH_SPEED, NO_PULL, 7);
+    gpio_init(PORTA, 3, ALT, PUSH_PULL, HIGH_SPEED, NO_PULL, 7);
 
-void delay_ms(uint32_t ms)
-{
-    uint32_t start = ticks;
-    while ((ticks - start) < ms);
-}
+    // Initialize USART2 on APB1 with baud rate 9600 and 16x oversampling
+    usart_init(USART2, 9600, get_apb1_clock(), OVER8_16);
 
-int main()
-{
-    clock_init();
-
-    SysTick_Config(100000);  
-    __enable_irq();
-
-    gpio_init(GPIOA, 5, 1);  
-    usart_init(USART2, 9600, 16);
-    usart_write_string(USART2, "System started.\r\n");
-
-    while (1)
-    {
-        gpio_toggle(GPIOA, 5);
-        usart_write_string(USART2, "Toggled LED\r\n");
-        delay_ms(500);
+    // Send a startup message
+    const char* msg = "Start\n";
+    for (const char* p = msg; *p != '\0'; ++p) {
+        usart_write(USART2, *p);
     }
+
+    // Main loop
+    while (1) {
+        // Toggle PA5 LED
+        GPIOA->ODR ^= (1 << 5);
+
+        // Send heartbeat over USART2
+        usart_write(USART2, '.');
+
+        // Delay loop (crude timing)
+        for (volatile int i = 0; i < 100000; i++);
+    }
+
+    return 0;
 }
