@@ -19,10 +19,6 @@ $(BINARY): main.o gpio.o clock.o usart.o startup.o system_stm32f4xx.o
 
 main.o: main.cpp
 	$(CC) $(CFLAGS) $(CPPFLAGS) main.cpp -c
-$(BINARY): main.o gpio.o clock.o startup.o system_stm32f4xx.o
-
-main.o: main.cpp
-	$(CC) $(CFLAGS) $(CPPFLAGS) main.cpp -c
 
 gpio.o: gpio.cpp
 	$(CC) $(CFLAGS) $(CPPFLAGS) gpio.cpp -c
